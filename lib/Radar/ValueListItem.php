@@ -9,7 +9,7 @@ namespace Epayco\Radar;
  * which can then be used in rules.
  *
  * Related guide: <a
- * href="https://epayco.com/docs/radar/lists#managing-list-items">Managing List
+ * href="https://stripe.com/docs/radar/lists#managing-list-items">Managing List
  * Items</a>.
  *
  * @property string $id Unique identifier for the object.

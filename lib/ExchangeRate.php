@@ -14,7 +14,7 @@ namespace Epayco;
  * If you want a guarantee that the charge is made with a certain exchange rate you
  * expect is current, you can pass in <code>exchange_rate</code> to charges
  * endpoints. If the value is no longer up to date, the charge won't go through.
- * Please refer to our <a href="https://epayco.com/docs/exchange-rates">Exchange
+ * Please refer to our <a href="https://stripe.com/docs/exchange-rates">Exchange
  * Rates API</a> guide for more details.
  *
  * @property string $id Unique identifier for the object. Represented as the three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a> in lowercase.

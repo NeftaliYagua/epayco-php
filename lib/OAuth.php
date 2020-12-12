@@ -88,10 +88,10 @@ abstract class OAuth
             $msg = 'No client_id provided.  (HINT: set your client_id using '
               . '"Epayco::setClientId(<CLIENT-ID>)".  You can find your client_ids '
               . 'in your Epayco dashboard at '
-              . 'https://dashboard.epayco.com/account/applications/settings, '
+              . 'https://dashboard.stripe.com/account/applications/settings, '
               . 'after registering your account as a platform. See '
-              . 'https://epayco.com/docs/connect/standard-accounts for details, '
-              . 'or email support@epayco.com if you have any questions.';
+              . 'https://stripe.com/docs/connect/standard-accounts for details, '
+              . 'or email support@stripe.com if you have any questions.';
 
             throw new Exception\AuthenticationException($msg);
         }

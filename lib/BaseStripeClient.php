@@ -5,13 +5,13 @@ namespace Epayco;
 class BaseEpaycoClient implements EpaycoClientInterface
 {
     /** @var string default base URL for Epayco's API */
-    const DEFAULT_API_BASE = 'https://api.epayco.com';
+    const DEFAULT_API_BASE = 'https://api.stripe.com';
 
     /** @var string default base URL for Epayco's OAuth API */
-    const DEFAULT_CONNECT_BASE = 'https://connect.epayco.com';
+    const DEFAULT_CONNECT_BASE = 'https://connect.stripe.com';
 
     /** @var string default base URL for Epayco's Files API */
-    const DEFAULT_FILES_BASE = 'https://files.epayco.com';
+    const DEFAULT_FILES_BASE = 'https://files.stripe.com';
 
     /** @var array<string, mixed> */
     private $config;

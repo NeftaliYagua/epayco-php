@@ -9,7 +9,7 @@ namespace Epayco;
  * metered billing of subscription prices.
  *
  * Related guide: <a
- * href="https://epayco.com/docs/billing/subscriptions/metered-billing">Metered
+ * href="https://stripe.com/docs/billing/subscriptions/metered-billing">Metered
  * Billing</a>.
  *
  * @property string $id Unique identifier for the object.

@@ -6,10 +6,10 @@ namespace Epayco;
 
 /**
  * You can add one or multiple tax IDs to a <a
- * href="https://epayco.com/docs/api/customers">customer</a>. A customer's tax IDs
+ * href="https://stripe.com/docs/api/customers">customer</a>. A customer's tax IDs
  * are displayed on invoices and credit notes issued for the customer.
  *
- * Related guide: <a href="https://epayco.com/docs/billing/taxes/tax-ids">Customer
+ * Related guide: <a href="https://stripe.com/docs/billing/taxes/tax-ids">Customer
  * Tax Identification Numbers</a>.
  *
  * @property string $id Unique identifier for the object.

@@ -1076,7 +1076,7 @@ Pull requests included in this release:
 
 ## 3.4.0 - 2015-09-14
 
--   Products, SKUs, and Orders -- https://epayco.com/relay
+-   Products, SKUs, and Orders -- https://stripe.com/relay
 
 ## 3.3.0 - 2015-09-11
 
@@ -1236,7 +1236,7 @@ Pull requests included in this release:
 
 ## 1.8.1 - 2013-07-12
 
--   Add support for multiple cards API (Epayco API version 2013-07-12: https://epayco.com/docs/upgrades#2013-07-05)
+-   Add support for multiple cards API (Epayco API version 2013-07-12: https://stripe.com/docs/upgrades#2013-07-05)
 
 ## 1.8.0 - 2013-04-11
 

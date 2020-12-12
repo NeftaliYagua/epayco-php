@@ -9,7 +9,7 @@ namespace Epayco;
  * expertise.
  *
  * Learn more about <a href="/radar">Radar</a> and reviewing payments <a
- * href="https://epayco.com/docs/radar/reviews">here</a>.
+ * href="https://stripe.com/docs/radar/reviews">here</a>.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
@@ -38,7 +38,7 @@ class Review extends ApiResource
      * Not all of these enumeration apply to all of the ´reason´ fields. Please consult the Review object to
      * determine where these are apply.
      *
-     * @see https://epayco.com/docs/api/radar/reviews/object
+     * @see https://stripe.com/docs/api/radar/reviews/object
      */
     const REASON_APPROVED = 'approved';
     const REASON_DISPUTED = 'disputed';

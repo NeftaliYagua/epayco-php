@@ -380,7 +380,7 @@ class CurlClient implements ClientInterface
                 $msg = 'Unexpected error communicating with Epayco.  '
                  . 'If this problem persists,';
         }
-        $msg .= ' let us know at support@epayco.com.';
+        $msg .= ' let us know at support@stripe.com.';
 
         $msg .= "\n\n(Network error [errno {$errno}]: {$message})";
 

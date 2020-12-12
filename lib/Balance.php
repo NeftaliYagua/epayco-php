@@ -9,18 +9,18 @@ namespace Epayco;
  * the balance currently on your Epayco account.
  *
  * You can also retrieve the balance history, which contains a list of <a
- * href="https://epayco.com/docs/reporting/balance-transaction-types">transactions</a>
+ * href="https://stripe.com/docs/reporting/balance-transaction-types">transactions</a>
  * that contributed to the balance (charges, payouts, and so forth).
  *
  * The available and pending amounts for each currency are broken down further by
  * payment source types.
  *
  * Related guide: <a
- * href="https://epayco.com/docs/connect/account-balances">Understanding Connect
+ * href="https://stripe.com/docs/connect/account-balances">Understanding Connect
  * Account Balances</a>.
  *
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property \Epayco\EpaycoObject[] $available Funds that are available to be transferred or paid out, whether automatically by Epayco or explicitly via the <a href="https://epayco.com/docs/api#transfers">Transfers API</a> or <a href="https://epayco.com/docs/api#payouts">Payouts API</a>. The available balance for each currency and payment type can be found in the <code>source_types</code> property.
+ * @property \Epayco\EpaycoObject[] $available Funds that are available to be transferred or paid out, whether automatically by Epayco or explicitly via the <a href="https://stripe.com/docs/api#transfers">Transfers API</a> or <a href="https://stripe.com/docs/api#payouts">Payouts API</a>. The available balance for each currency and payment type can be found in the <code>source_types</code> property.
  * @property \Epayco\EpaycoObject[] $connect_reserved Funds held due to negative balances on connected Custom accounts. The connect reserve balance for each currency and payment type can be found in the <code>source_types</code> property.
  * @property \Epayco\EpaycoObject[] $instant_available Funds that can be paid out using Instant Payouts.
  * @property \Epayco\EpaycoObject $issuing

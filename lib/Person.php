@@ -8,7 +8,7 @@ namespace Epayco;
  * This is an object representing a person associated with a Epayco account.
  *
  * Related guide: <a
- * href="https://epayco.com/docs/connect/identity-verification-api#person-information">Handling
+ * href="https://stripe.com/docs/connect/identity-verification-api#person-information">Handling
  * Identity Verification with the API</a>.
  *
  * @property string $id Unique identifier for the object.
@@ -29,7 +29,7 @@ namespace Epayco;
  * @property null|string $last_name_kana The Kana variation of the person's last name (Japan only).
  * @property null|string $last_name_kanji The Kanji variation of the person's last name (Japan only).
  * @property null|string $maiden_name The person's maiden name.
- * @property \Epayco\EpaycoObject $metadata Set of <a href="https://epayco.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property \Epayco\EpaycoObject $metadata Set of <a href="https://stripe.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property null|string $phone The person's phone number.
  * @property string $political_exposure Indicates if the person or any of their representatives, family members, or other closely related persons, declares that they hold or have held an important public job or function, in any jurisdiction.
  * @property \Epayco\EpaycoObject $relationship

@@ -8,7 +8,7 @@ namespace Epayco\Terminal;
  * A Connection Token is used by the Epayco Terminal SDK to connect to a reader.
  *
  * Related guide: <a
- * href="https://epayco.com/docs/terminal/readers/fleet-management#create">Fleet
+ * href="https://stripe.com/docs/terminal/readers/fleet-management#create">Fleet
  * Management</a>.
  *
  * @property string $object String representing the object's type. Objects of the same type share the same value.

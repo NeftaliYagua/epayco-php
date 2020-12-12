@@ -10,7 +10,7 @@ namespace Epayco;
  * Onboarding.
  *
  * Related guide: <a
- * href="https://epayco.com/docs/connect/connect-onboarding">Connect
+ * href="https://stripe.com/docs/connect/connect-onboarding">Connect
  * Onboarding</a>.
  *
  * @property string $object String representing the object's type. Objects of the same type share the same value.

@@ -8,7 +8,7 @@ namespace Epayco;
  * This is an object representing a capability for a Epayco account.
  *
  * Related guide: <a
- * href="https://epayco.com/docs/connect/account-capabilities">Account
+ * href="https://stripe.com/docs/connect/account-capabilities">Account
  * capabilities</a>.
  *
  * @property string $id The identifier for the capability.

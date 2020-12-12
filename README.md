@@ -68,7 +68,7 @@ You can continue to use the legacy integration patterns used prior to version [7
 
 ## Documentation
 
-See the [PHP API docs](https://epayco.com/docs/api/php#intro).
+See the [PHP API docs](https://stripe.com/docs/api/php#intro).
 
 ## Legacy Version Support
 
@@ -82,7 +82,7 @@ If you are using PHP 5.3, you can download v5.9.2 ([zip](https://github.com/epay
 
 ## Custom Request Timeouts
 
-_NOTE:_ We do not recommend decreasing the timeout for non-read-only calls (e.g. charge creation), since even if you locally timeout, the request on Epayco's side can still complete. If you are decreasing timeouts on these calls, make sure to use [idempotency tokens](https://epayco.com/docs/api/php#idempotent_requests) to avoid executing the same transaction twice as a result of timeout retry logic.
+_NOTE:_ We do not recommend decreasing the timeout for non-read-only calls (e.g. charge creation), since even if you locally timeout, the request on Epayco's side can still complete. If you are decreasing timeouts on these calls, make sure to use [idempotency tokens](https://stripe.com/docs/api/php#idempotent_requests) to avoid executing the same transaction twice as a result of timeout retry logic.
 
 To modify request timeouts (connect or total, in seconds) you'll need to tell the API client to use a CurlClient other than its default. You'll set the timeouts in that CurlClient.
 
@@ -137,9 +137,9 @@ echo $customer->getLastResponse()->headers['Request-Id'];
 
 ### SSL / TLS compatibility issues
 
-Epayco's API now requires that [all connections use TLS 1.2](https://epayco.com/blog/upgrading-tls). Some systems (most notably some older CentOS and RHEL versions) are capable of using TLS 1.2 but will use TLS 1.0 or 1.1 by default. In this case, you'd get an `invalid_request_error` with the following error message: "Epayco no longer supports API requests made with TLS 1.0. Please initiate HTTPS connections with TLS 1.2 or later. You can learn more about this at [https://epayco.com/blog/upgrading-tls](https://epayco.com/blog/upgrading-tls).".
+Epayco's API now requires that [all connections use TLS 1.2](https://stripe.com/blog/upgrading-tls). Some systems (most notably some older CentOS and RHEL versions) are capable of using TLS 1.2 but will use TLS 1.0 or 1.1 by default. In this case, you'd get an `invalid_request_error` with the following error message: "Epayco no longer supports API requests made with TLS 1.0. Please initiate HTTPS connections with TLS 1.2 or later. You can learn more about this at [https://stripe.com/blog/upgrading-tls](https://stripe.com/blog/upgrading-tls).".
 
-The recommended course of action is to [upgrade your cURL and OpenSSL packages](https://support.epayco.com/questions/how-do-i-upgrade-my-epayco-integration-from-tls-1-0-to-tls-1-2#php) so that TLS 1.2 is used by default, but if that is not possible, you might be able to solve the issue by setting the `CURLOPT_SSLVERSION` option to either `CURL_SSLVERSION_TLSv1` or `CURL_SSLVERSION_TLSv1_2`:
+The recommended course of action is to [upgrade your cURL and OpenSSL packages](https://support.stripe.com/questions/how-do-i-upgrade-my-epayco-integration-from-tls-1-0-to-tls-1-2#php) so that TLS 1.2 is used by default, but if that is not possible, you might be able to solve the issue by setting the `CURLOPT_SSLVERSION` option to either `CURL_SSLVERSION_TLSv1` or `CURL_SSLVERSION_TLSv1_2`:
 
 ```php
 $curl = new \Epayco\HttpClient\CurlClient([CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1]);
@@ -258,9 +258,9 @@ The method should be called once, before any request is sent to the API. The sec
 See the "SSL / TLS compatibility issues" paragraph above for full context. If you want to ensure that your plugin can be used on all systems, you should add a configuration option to let your users choose between different values for `CURLOPT_SSLVERSION`: none (default), `CURL_SSLVERSION_TLSv1` and `CURL_SSLVERSION_TLSv1_2`.
 
 [composer]: https://getcomposer.org/
-[connect]: https://epayco.com/connect
+[connect]: https://stripe.com/connect
 [curl]: http://curl.haxx.se/docs/caextract.html
-[idempotency-keys]: https://epayco.com/docs/api/php#idempotent_requests
+[idempotency-keys]: https://stripe.com/docs/api/php#idempotent_requests
 [php-cs-fixer]: https://github.com/FriendsOfPHP/PHP-CS-Fixer
 [psr3]: http://www.php-fig.org/psr/psr-3/
 [epayco-mock]: https://github.com/epayco/epayco-mock

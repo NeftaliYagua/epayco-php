@@ -7,12 +7,12 @@ namespace Epayco;
 /**
  * This is an object representing a file hosted on Epayco's servers. The file may
  * have been uploaded by yourself using the <a
- * href="https://epayco.com/docs/api#create_file">create file</a> request (for
+ * href="https://stripe.com/docs/api#create_file">create file</a> request (for
  * example, when uploading dispute evidence) or it may have been created by Epayco
  * (for example, the results of a <a href="#scheduled_queries">Sigma scheduled
  * query</a>).
  *
- * Related guide: <a href="https://epayco.com/docs/file-upload">File Upload
+ * Related guide: <a href="https://stripe.com/docs/file-upload">File Upload
  * Guide</a>.
  *
  * @property string $id Unique identifier for the object.
@@ -20,8 +20,8 @@ namespace Epayco;
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property null|int $expires_at The time at which the file expires and is no longer available in epoch seconds.
  * @property null|string $filename A filename for the file, suitable for saving to a filesystem.
- * @property null|\Epayco\Collection $links A list of <a href="https://epayco.com/docs/api#file_links">file links</a> that point at this file.
- * @property string $purpose The <a href="https://epayco.com/docs/file-upload#uploading-a-file">purpose</a> of the uploaded file.
+ * @property null|\Epayco\Collection $links A list of <a href="https://stripe.com/docs/api#file_links">file links</a> that point at this file.
+ * @property string $purpose The <a href="https://stripe.com/docs/file-upload#uploading-a-file">purpose</a> of the uploaded file.
  * @property int $size The size in bytes of the file object.
  * @property null|string $title A user friendly title for the document.
  * @property null|string $type The type of the file returned (e.g., <code>csv</code>, <code>pdf</code>, <code>jpg</code>, or <code>png</code>).

@@ -5,7 +5,7 @@
 namespace Epayco\Sigma;
 
 /**
- * If you have <a href="https://epayco.com/docs/sigma/scheduled-queries">scheduled
+ * If you have <a href="https://stripe.com/docs/sigma/scheduled-queries">scheduled
  * a Sigma query</a>, you'll receive a
  * <code>sigma.scheduled_query_run.created</code> webhook each time the query runs.
  * The webhook contains a <code>ScheduledQueryRun</code> object, which you can use

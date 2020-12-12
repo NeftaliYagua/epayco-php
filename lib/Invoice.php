@@ -8,14 +8,14 @@ namespace Epayco;
  * Invoices are statements of amounts owed by a customer, and are either generated
  * one-off, or generated periodically from a subscription.
  *
- * They contain <a href="https://epayco.com/docs/api#invoiceitems">invoice
+ * They contain <a href="https://stripe.com/docs/api#invoiceitems">invoice
  * items</a>, and proration adjustments that may be caused by subscription
  * upgrades/downgrades (if necessary).
  *
  * If your invoice is configured to be billed through automatic charges, Epayco
  * automatically finalizes your invoice and attempts payment. Note that finalizing
  * the invoice, <a
- * href="https://epayco.com/docs/billing/invoices/workflow/#auto_advance">when
+ * href="https://stripe.com/docs/billing/invoices/workflow/#auto_advance">when
  * automatic</a>, does not happen immediately as the invoice is created. Epayco
  * waits until one hour after the last webhook was successfully sent (or the last
  * webhook timed out after failing). If you (and the platforms you may have
@@ -23,7 +23,7 @@ namespace Epayco;
  * to finalize the invoice.
  *
  * If your invoice is configured to be billed by sending an email, then based on
- * your <a href="https://dashboard.epayco.com/account/billing/automatic'">email
+ * your <a href="https://dashboard.stripe.com/account/billing/automatic'">email
  * settings</a>, Epayco will email the invoice to your customer and await payment.
  * These emails can contain a link to a hosted page to pay the invoice.
  *
@@ -36,9 +36,9 @@ namespace Epayco;
  * next invoice.
  *
  * More details on the customer's account balance are <a
- * href="https://epayco.com/docs/api/customers/object#customer_object-account_balance">here</a>.
+ * href="https://stripe.com/docs/api/customers/object#customer_object-account_balance">here</a>.
  *
- * Related guide: <a href="https://epayco.com/docs/billing/invoices/sending">Send
+ * Related guide: <a href="https://stripe.com/docs/billing/invoices/sending">Send
  * Invoices to Customers</a>.
  *
  * @property string $id Unique identifier for the object.
@@ -52,12 +52,12 @@ namespace Epayco;
  * @property null|int $application_fee_amount The fee in %s that will be applied to the invoice and transferred to the application owner's Epayco account when the invoice is paid.
  * @property int $attempt_count Number of payment attempts made for this invoice, from the perspective of the payment retry schedule. Any payment attempt counts as the first attempt, and subsequently only automatic retries increment the attempt count. In other words, manual payment attempts after the first attempt do not affect the retry schedule.
  * @property bool $attempted Whether an attempt has been made to pay the invoice. An invoice is not attempted until 1 hour after the <code>invoice.created</code> webhook, for example, so you might not want to display that invoice as unpaid to your users.
- * @property bool $auto_advance Controls whether Epayco will perform <a href="https://epayco.com/docs/billing/invoices/workflow/#auto_advance">automatic collection</a> of the invoice. When <code>false</code>, the invoice's state will not automatically advance without an explicit action.
+ * @property bool $auto_advance Controls whether Epayco will perform <a href="https://stripe.com/docs/billing/invoices/workflow/#auto_advance">automatic collection</a> of the invoice. When <code>false</code>, the invoice's state will not automatically advance without an explicit action.
  * @property null|string $billing_reason Indicates the reason why the invoice was created. <code>subscription_cycle</code> indicates an invoice created by a subscription advancing into a new period. <code>subscription_create</code> indicates an invoice created due to creating a subscription. <code>subscription_update</code> indicates an invoice created due to updating a subscription. <code>subscription</code> is set for all old invoices to indicate either a change to a subscription or a period advancement. <code>manual</code> is set for all invoices unrelated to a subscription (for example: created via the invoice editor). The <code>upcoming</code> value is reserved for simulated invoices per the upcoming invoice endpoint. <code>subscription_threshold</code> indicates an invoice created due to a billing threshold being reached.
  * @property null|string|\Epayco\Charge $charge ID of the latest charge generated for this invoice, if any.
  * @property null|string $collection_method Either <code>charge_automatically</code>, or <code>send_invoice</code>. When charging automatically, Epayco will attempt to pay this invoice using the default source attached to the customer. When sending an invoice, Epayco will email this invoice to the customer with payment instructions.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://epayco.com/docs/currencies">supported currency</a>.
+ * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://stripe.com/docs/currencies">supported currency</a>.
  * @property null|\Epayco\EpaycoObject[] $custom_fields Custom fields displayed on the invoice.
  * @property string|\Epayco\Customer $customer The ID of the customer who will be billed.
  * @property null|\Epayco\EpaycoObject $customer_address The customer's address. Until the invoice is finalized, this field will equal <code>customer.address</code>. Once the invoice is finalized, this field will no longer be updated.
@@ -81,7 +81,7 @@ namespace Epayco;
  * @property null|\Epayco\ErrorObject $last_finalization_error The error encountered during the previous attempt to finalize the invoice. This field is cleared when the invoice is successfully finalized.
  * @property \Epayco\Collection $lines The individual line items that make up the invoice. <code>lines</code> is sorted as follows: invoice items in reverse chronological order, followed by the subscription, if any.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property null|\Epayco\EpaycoObject $metadata Set of <a href="https://epayco.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\Epayco\EpaycoObject $metadata Set of <a href="https://stripe.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property null|int $next_payment_attempt The time at which payment will next be attempted. This value will be <code>null</code> for invoices where <code>collection_method=send_invoice</code>.
  * @property null|string $number A unique, identifying string that appears on emails sent to the customer for this invoice. This starts with the customer's unique invoice_prefix if it is specified.
  * @property bool $paid Whether payment was successfully collected for this invoice. An invoice can be paid (most commonly) with a charge or with credit from the customer's account balance.
@@ -93,7 +93,7 @@ namespace Epayco;
  * @property null|string $receipt_number This is the transaction number that appears on email receipts sent for this invoice.
  * @property int $starting_balance Starting customer balance before the invoice is finalized. If the invoice has not been finalized yet, this will be the current customer balance.
  * @property null|string $statement_descriptor Extra information about an invoice for the customer's credit card statement.
- * @property null|string $status The status of the invoice, one of <code>draft</code>, <code>open</code>, <code>paid</code>, <code>uncollectible</code>, or <code>void</code>. <a href="https://epayco.com/docs/billing/invoices/workflow#workflow-overview">Learn more</a>
+ * @property null|string $status The status of the invoice, one of <code>draft</code>, <code>open</code>, <code>paid</code>, <code>uncollectible</code>, or <code>void</code>. <a href="https://stripe.com/docs/billing/invoices/workflow#workflow-overview">Learn more</a>
  * @property \Epayco\EpaycoObject $status_transitions
  * @property null|string|\Epayco\Subscription $subscription The subscription that this invoice was prepared for, if any.
  * @property int $subscription_proration_date Only set for upcoming invoices that preview prorations. The time used to calculate prorations.
@@ -103,7 +103,7 @@ namespace Epayco;
  * @property int $total Total after discounts and taxes.
  * @property null|\Epayco\EpaycoObject[] $total_discount_amounts The aggregate amounts calculated per discount across all line items.
  * @property \Epayco\EpaycoObject[] $total_tax_amounts The aggregate amounts calculated per tax rate for all line items.
- * @property null|int $webhooks_delivered_at Invoices are automatically paid or sent 1 hour after webhooks are delivered, or until all webhook delivery attempts have <a href="https://epayco.com/docs/billing/webhooks#understand">been exhausted</a>. This field tracks the time when webhooks for this invoice were successfully delivered. If the invoice had no webhooks to deliver, this will be set while the invoice is being created.
+ * @property null|int $webhooks_delivered_at Invoices are automatically paid or sent 1 hour after webhooks are delivered, or until all webhook delivery attempts have <a href="https://stripe.com/docs/billing/webhooks#understand">been exhausted</a>. This field tracks the time when webhooks for this invoice were successfully delivered. If the invoice had no webhooks to deliver, this will be set while the invoice is being created.
  */
 class Invoice extends ApiResource
 {

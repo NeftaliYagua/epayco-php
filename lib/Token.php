@@ -9,7 +9,7 @@ namespace Epayco;
  * account details, or personally identifiable information (PII), directly from
  * your customers in a secure manner. A token representing this information is
  * returned to your server to use. You should use our <a
- * href="https://epayco.com/docs/payments">recommended payments integrations</a> to
+ * href="https://stripe.com/docs/payments">recommended payments integrations</a> to
  * perform this process client-side. This ensures that no sensitive card data
  * touches your server, and allows your integration to operate in a PCI-compliant
  * way.
@@ -23,20 +23,20 @@ namespace Epayco;
  *
  * Tokens cannot be stored or used more than once. To store card or bank account
  * information for later use, you can create <a
- * href="https://epayco.com/docs/api#customers">Customer</a> objects or <a
- * href="https://epayco.com/docs/api#external_accounts">Custom accounts</a>. Note
- * that <a href="https://epayco.com/docs/radar">Radar</a>, our integrated solution
+ * href="https://stripe.com/docs/api#customers">Customer</a> objects or <a
+ * href="https://stripe.com/docs/api#external_accounts">Custom accounts</a>. Note
+ * that <a href="https://stripe.com/docs/radar">Radar</a>, our integrated solution
  * for automatic fraud protection, supports only integrations that use client-side
  * tokenization.
  *
  * Related guide: <a
- * href="https://epayco.com/docs/payments/accept-a-payment-charges#web-create-token">Accept
+ * href="https://stripe.com/docs/payments/accept-a-payment-charges#web-create-token">Accept
  * a payment</a>
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property \Epayco\BankAccount $bank_account <p>These bank accounts are payment methods on <code>Customer</code> objects.</p><p>On the other hand <a href="https://epayco.com/docs/api#external_accounts">External Accounts</a> are transfer destinations on <code>Account</code> objects for <a href="https://epayco.com/docs/connect/custom-accounts">Custom accounts</a>. They can be bank accounts or debit cards as well, and are documented in the links above.</p><p>Related guide: <a href="https://epayco.com/docs/payments/bank-debits-transfers">Bank Debits and Transfers</a>.</p>
- * @property \Epayco\Card $card <p>You can store multiple cards on a customer in order to charge the customer later. You can also store multiple debit cards on a recipient in order to transfer to those cards later.</p><p>Related guide: <a href="https://epayco.com/docs/sources/cards">Card Payments with Sources</a>.</p>
+ * @property \Epayco\BankAccount $bank_account <p>These bank accounts are payment methods on <code>Customer</code> objects.</p><p>On the other hand <a href="https://stripe.com/docs/api#external_accounts">External Accounts</a> are transfer destinations on <code>Account</code> objects for <a href="https://stripe.com/docs/connect/custom-accounts">Custom accounts</a>. They can be bank accounts or debit cards as well, and are documented in the links above.</p><p>Related guide: <a href="https://stripe.com/docs/payments/bank-debits-transfers">Bank Debits and Transfers</a>.</p>
+ * @property \Epayco\Card $card <p>You can store multiple cards on a customer in order to charge the customer later. You can also store multiple debit cards on a recipient in order to transfer to those cards later.</p><p>Related guide: <a href="https://stripe.com/docs/sources/cards">Card Payments with Sources</a>.</p>
  * @property null|string $client_ip IP address of the client that generated the token.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.

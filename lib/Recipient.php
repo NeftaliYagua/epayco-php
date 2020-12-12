@@ -11,8 +11,8 @@ namespace Epayco;
  * recipients as well as a list of all your recipients.
  *
  * <strong><code>Recipient</code> objects have been deprecated in favor of <a
- * href="https://epayco.com/docs/connect">Connect</a>, specifically Connect's much
- * more powerful <a href="https://epayco.com/docs/api#account">Account objects</a>.
+ * href="https://stripe.com/docs/connect">Connect</a>, specifically Connect's much
+ * more powerful <a href="https://stripe.com/docs/api#account">Account objects</a>.
  * Epayco accounts that don't already use recipients can no longer begin doing so.
  * Please use <code>Account</code> objects instead.</strong>
  *
@@ -25,8 +25,8 @@ namespace Epayco;
  * @property null|string $description An arbitrary string attached to the object. Often useful for displaying to users.
  * @property null|string $email
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property \Epayco\EpaycoObject $metadata Set of <a href="https://epayco.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
- * @property null|string|\Epayco\Account $migrated_to The ID of the <a href="https://epayco.com/docs/connect/custom-accounts">Custom account</a> this recipient was migrated to. If set, the recipient can no longer be updated, nor can transfers be made to it: use the Custom account instead.
+ * @property \Epayco\EpaycoObject $metadata Set of <a href="https://stripe.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|string|\Epayco\Account $migrated_to The ID of the <a href="https://stripe.com/docs/connect/custom-accounts">Custom account</a> this recipient was migrated to. If set, the recipient can no longer be updated, nor can transfers be made to it: use the Custom account instead.
  * @property null|string $name Full, legal name of the recipient.
  * @property string|\Epayco\Account $rolled_back_from
  * @property string $type Type of the recipient, one of <code>individual</code> or <code>corporation</code>.

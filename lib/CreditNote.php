@@ -9,13 +9,13 @@ namespace Epayco;
  * finalized.
  *
  * Related guide: <a
- * href="https://epayco.com/docs/billing/invoices/credit-notes">Credit Notes</a>.
+ * href="https://stripe.com/docs/billing/invoices/credit-notes">Credit Notes</a>.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
  * @property int $amount The integer amount in %s representing the total amount of the credit note, including tax.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://epayco.com/docs/currencies">supported currency</a>.
+ * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://stripe.com/docs/currencies">supported currency</a>.
  * @property string|\Epayco\Customer $customer ID of the customer.
  * @property null|string|\Epayco\CustomerBalanceTransaction $customer_balance_transaction Customer balance transaction related to this credit note.
  * @property int $discount_amount The integer amount in %s representing the total amount of discount that was credited.
@@ -24,13 +24,13 @@ namespace Epayco;
  * @property \Epayco\Collection $lines Line items that make up the credit note
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
  * @property null|string $memo Customer-facing text that appears on the credit note PDF.
- * @property null|\Epayco\EpaycoObject $metadata Set of <a href="https://epayco.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\Epayco\EpaycoObject $metadata Set of <a href="https://stripe.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property string $number A unique number that identifies this particular credit note and appears on the PDF of the credit note and its associated invoice.
  * @property null|int $out_of_band_amount Amount that was credited outside of Epayco.
  * @property string $pdf The link to download the PDF of the credit note.
  * @property null|string $reason Reason for issuing this credit note, one of <code>duplicate</code>, <code>fraudulent</code>, <code>order_change</code>, or <code>product_unsatisfactory</code>
  * @property null|string|\Epayco\Refund $refund Refund related to this credit note.
- * @property string $status Status of this credit note, one of <code>issued</code> or <code>void</code>. Learn more about <a href="https://epayco.com/docs/billing/invoices/credit-notes#voiding">voiding credit notes</a>.
+ * @property string $status Status of this credit note, one of <code>issued</code> or <code>void</code>. Learn more about <a href="https://stripe.com/docs/billing/invoices/credit-notes#voiding">voiding credit notes</a>.
  * @property int $subtotal The integer amount in %s representing the amount of the credit note, excluding tax and invoice level discounts.
  * @property \Epayco\EpaycoObject[] $tax_amounts The aggregate amounts calculated per tax rate for all line items.
  * @property int $total The integer amount in %s representing the total amount of the credit note, including tax and all discount.

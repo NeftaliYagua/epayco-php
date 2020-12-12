@@ -10,8 +10,8 @@ namespace Epayco;
  * API just like a <code>Card</code> object: once chargeable, they can be charged,
  * or can be attached to customers.
  *
- * Related guides: <a href="https://epayco.com/docs/sources">Sources API</a> and <a
- * href="https://epayco.com/docs/sources/customers">Sources &amp; Customers</a>.
+ * Related guides: <a href="https://stripe.com/docs/sources">Sources API</a> and <a
+ * href="https://stripe.com/docs/sources/customers">Sources &amp; Customers</a>.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
@@ -27,7 +27,7 @@ namespace Epayco;
  * @property string $client_secret The client secret of the source. Used for client-side retrieval using a publishable key.
  * @property \Epayco\EpaycoObject $code_verification
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property null|string $currency Three-letter <a href="https://epayco.com/docs/currencies">ISO code for the currency</a> associated with the source. This is the currency for which the source will be chargeable once ready. Required for <code>single_use</code> sources.
+ * @property null|string $currency Three-letter <a href="https://stripe.com/docs/currencies">ISO code for the currency</a> associated with the source. This is the currency for which the source will be chargeable once ready. Required for <code>single_use</code> sources.
  * @property string $customer The ID of the customer to which this source is attached. This will not be present when the source has not been attached to a customer.
  * @property \Epayco\EpaycoObject $eps
  * @property string $flow The authentication <code>flow</code> of the source. <code>flow</code> is one of <code>redirect</code>, <code>receiver</code>, <code>code_verification</code>, <code>none</code>.
@@ -35,7 +35,7 @@ namespace Epayco;
  * @property \Epayco\EpaycoObject $ideal
  * @property \Epayco\EpaycoObject $klarna
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property null|\Epayco\EpaycoObject $metadata Set of <a href="https://epayco.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\Epayco\EpaycoObject $metadata Set of <a href="https://stripe.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property \Epayco\EpaycoObject $multibanco
  * @property null|\Epayco\EpaycoObject $owner Information about the owner of the payment instrument that may be used or required by particular source types.
  * @property \Epayco\EpaycoObject $p24
@@ -48,7 +48,7 @@ namespace Epayco;
  * @property null|string $statement_descriptor Extra information about a source. This will appear on your customer's statement every time you charge the source.
  * @property string $status The status of the source, one of <code>canceled</code>, <code>chargeable</code>, <code>consumed</code>, <code>failed</code>, or <code>pending</code>. Only <code>chargeable</code> sources can be used to create a charge.
  * @property \Epayco\EpaycoObject $three_d_secure
- * @property string $type The <code>type</code> of the source. The <code>type</code> is a payment method, one of <code>ach_credit_transfer</code>, <code>ach_debit</code>, <code>alipay</code>, <code>bancontact</code>, <code>card</code>, <code>card_present</code>, <code>eps</code>, <code>giropay</code>, <code>ideal</code>, <code>multibanco</code>, <code>klarna</code>, <code>p24</code>, <code>sepa_debit</code>, <code>sofort</code>, <code>three_d_secure</code>, or <code>wechat</code>. An additional hash is included on the source with a name matching this value. It contains additional information specific to the <a href="https://epayco.com/docs/sources">payment method</a> used.
+ * @property string $type The <code>type</code> of the source. The <code>type</code> is a payment method, one of <code>ach_credit_transfer</code>, <code>ach_debit</code>, <code>alipay</code>, <code>bancontact</code>, <code>card</code>, <code>card_present</code>, <code>eps</code>, <code>giropay</code>, <code>ideal</code>, <code>multibanco</code>, <code>klarna</code>, <code>p24</code>, <code>sepa_debit</code>, <code>sofort</code>, <code>three_d_secure</code>, or <code>wechat</code>. An additional hash is included on the source with a name matching this value. It contains additional information specific to the <a href="https://stripe.com/docs/sources">payment method</a> used.
  * @property null|string $usage Either <code>reusable</code> or <code>single_use</code>. Whether this source should be reusable or not. Some source types may or may not be reusable by construction, while others may leave the option at creation. If an incompatible value is passed, an error will be returned.
  * @property \Epayco\EpaycoObject $wechat
  */

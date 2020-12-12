@@ -349,8 +349,8 @@ class ApiRequestor
         if (!$myApiKey) {
             $msg = 'No API key provided.  (HINT: set your API key using '
               . '"Epayco::setApiKey(<API-KEY>)".  You can generate API keys from '
-              . 'the Epayco web interface.  See https://epayco.com/api for '
-              . 'details, or email support@epayco.com if you have any questions.';
+              . 'the Epayco web interface.  See https://stripe.com/api for '
+              . 'details, or email support@stripe.com if you have any questions.';
 
             throw new Exception\AuthenticationException($msg);
         }

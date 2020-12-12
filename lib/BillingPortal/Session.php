@@ -13,7 +13,7 @@ namespace Epayco\BillingPortal;
  * billing details.
  *
  * Integration guide: <a
- * href="https://epayco.com/docs/billing/subscriptions/integrating-customer-portal">Billing
+ * href="https://stripe.com/docs/billing/subscriptions/integrating-customer-portal">Billing
  * customer portal</a>.
  *
  * @property string $id Unique identifier for the object.

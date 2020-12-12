@@ -10,7 +10,7 @@ namespace Epayco;
  * refunded to the Epayco account from which the fee was originally collected.
  *
  * Related guide: <a
- * href="https://epayco.com/docs/connect/destination-charges#refunding-app-fee">Refunding
+ * href="https://stripe.com/docs/connect/destination-charges#refunding-app-fee">Refunding
  * Application Fees</a>.
  *
  * @property string $id Unique identifier for the object.
@@ -18,9 +18,9 @@ namespace Epayco;
  * @property int $amount Amount, in %s.
  * @property null|string|\Epayco\BalanceTransaction $balance_transaction Balance transaction that describes the impact on your account balance.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://epayco.com/docs/currencies">supported currency</a>.
+ * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://stripe.com/docs/currencies">supported currency</a>.
  * @property string|\Epayco\ApplicationFee $fee ID of the application fee that was refunded.
- * @property null|\Epayco\EpaycoObject $metadata Set of <a href="https://epayco.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\Epayco\EpaycoObject $metadata Set of <a href="https://stripe.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  */
 class ApplicationFeeRefund extends ApiResource
 {

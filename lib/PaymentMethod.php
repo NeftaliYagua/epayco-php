@@ -7,13 +7,13 @@ namespace Epayco;
 /**
  * PaymentMethod objects represent your customer's payment instruments. They can be
  * used with <a
- * href="https://epayco.com/docs/payments/payment-intents">PaymentIntents</a> to
+ * href="https://stripe.com/docs/payments/payment-intents">PaymentIntents</a> to
  * collect payments or saved to Customer objects to store instrument details for
  * future payments.
  *
  * Related guides: <a
- * href="https://epayco.com/docs/payments/payment-methods">Payment Methods</a> and
- * <a href="https://epayco.com/docs/payments/more-payment-scenarios">More Payment
+ * href="https://stripe.com/docs/payments/payment-methods">Payment Methods</a> and
+ * <a href="https://stripe.com/docs/payments/more-payment-scenarios">More Payment
  * Scenarios</a>.
  *
  * @property string $id Unique identifier for the object.
@@ -34,7 +34,7 @@ namespace Epayco;
  * @property \Epayco\EpaycoObject $ideal
  * @property \Epayco\EpaycoObject $interac_present
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property null|\Epayco\EpaycoObject $metadata Set of <a href="https://epayco.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\Epayco\EpaycoObject $metadata Set of <a href="https://stripe.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property \Epayco\EpaycoObject $oxxo
  * @property \Epayco\EpaycoObject $p24
  * @property \Epayco\EpaycoObject $sepa_debit

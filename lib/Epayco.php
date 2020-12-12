@@ -14,13 +14,13 @@ class Epayco
     public static $clientId;
 
     /** @var string The base URL for the Epayco API. */
-    public static $apiBase = 'https://api.epayco.com';
+    public static $apiBase = 'https://api.stripe.com';
 
     /** @var string The base URL for the OAuth API. */
-    public static $connectBase = 'https://connect.epayco.com';
+    public static $connectBase = 'https://connect.stripe.com';
 
     /** @var string The base URL for the Epayco API uploads endpoint. */
-    public static $apiUploadBase = 'https://files.epayco.com';
+    public static $apiUploadBase = 'https://files.stripe.com';
 
     /** @var null|string The version of the Epayco API to use for requests. */
     public static $apiVersion = null;

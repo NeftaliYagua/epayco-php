@@ -40,7 +40,7 @@ class ErrorObject extends EpaycoObject
     /**
      * Possible string representations of an error's code.
      *
-     * @see https://epayco.com/docs/error-codes
+     * @see https://stripe.com/docs/error-codes
      */
     const CODE_ACCOUNT_ALREADY_EXISTS = 'account_already_exists';
     const CODE_ACCOUNT_COUNTRY_INVALID_ADDRESS = 'account_country_invalid_address';

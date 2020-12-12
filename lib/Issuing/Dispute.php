@@ -5,12 +5,12 @@
 namespace Epayco\Issuing;
 
 /**
- * As a <a href="https://epayco.com/docs/issuing">card issuer</a>, you can dispute
+ * As a <a href="https://stripe.com/docs/issuing">card issuer</a>, you can dispute
  * transactions that the cardholder does not recognize, suspects to be fraudulent,
  * or has other issues with.
  *
  * Related guide: <a
- * href="https://epayco.com/docs/issuing/purchases/disputes">Disputing
+ * href="https://stripe.com/docs/issuing/purchases/disputes">Disputing
  * Transactions</a>
  *
  * @property string $id Unique identifier for the object.
@@ -21,7 +21,7 @@ namespace Epayco\Issuing;
  * @property string $currency The currency the <code>disputed_transaction</code> was made in.
  * @property \Epayco\EpaycoObject $evidence
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property \Epayco\EpaycoObject $metadata Set of <a href="https://epayco.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property \Epayco\EpaycoObject $metadata Set of <a href="https://stripe.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property string $status Current status of the dispute.
  * @property string|\Epayco\Issuing\Transaction $transaction The transaction being disputed.
  */

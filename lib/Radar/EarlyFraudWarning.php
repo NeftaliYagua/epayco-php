@@ -9,7 +9,7 @@ namespace Epayco\Radar;
  * charge may be fraudulent.
  *
  * Related guide: <a
- * href="https://epayco.com/docs/disputes/measuring#early-fraud-warnings">Early
+ * href="https://stripe.com/docs/disputes/measuring#early-fraud-warnings">Early
  * Fraud Warnings</a>.
  *
  * @property string $id Unique identifier for the object.

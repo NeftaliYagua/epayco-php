@@ -10,7 +10,7 @@ namespace Epayco;
  * enabled yet to make live charges.
  *
  * Some properties, marked below, are available only to platforms that want to <a
- * href="https://epayco.com/docs/connect/accounts">create and manage Express or
+ * href="https://stripe.com/docs/connect/accounts">create and manage Express or
  * Custom accounts</a>.
  *
  * @property string $id Unique identifier for the object.
@@ -22,12 +22,12 @@ namespace Epayco;
  * @property \Epayco\EpaycoObject $company
  * @property string $country The account's country.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property string $default_currency Three-letter ISO currency code representing the default currency for the account. This must be a currency that <a href="https://epayco.com/docs/payouts">Epayco supports in the account's country</a>.
+ * @property string $default_currency Three-letter ISO currency code representing the default currency for the account. This must be a currency that <a href="https://stripe.com/docs/payouts">Epayco supports in the account's country</a>.
  * @property bool $details_submitted Whether account details have been submitted. Standard accounts cannot receive payouts before this is true.
  * @property null|string $email The primary user's email address.
  * @property \Epayco\Collection $external_accounts External accounts (bank accounts and debit cards) currently attached to this account
- * @property \Epayco\Person $individual <p>This is an object representing a person associated with a Epayco account.</p><p>Related guide: <a href="https://epayco.com/docs/connect/identity-verification-api#person-information">Handling Identity Verification with the API</a>.</p>
- * @property \Epayco\EpaycoObject $metadata Set of <a href="https://epayco.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property \Epayco\Person $individual <p>This is an object representing a person associated with a Epayco account.</p><p>Related guide: <a href="https://stripe.com/docs/connect/identity-verification-api#person-information">Handling Identity Verification with the API</a>.</p>
+ * @property \Epayco\EpaycoObject $metadata Set of <a href="https://stripe.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property bool $payouts_enabled Whether Epayco can send payouts to this account.
  * @property \Epayco\EpaycoObject $requirements
  * @property null|\Epayco\EpaycoObject $settings Options for customizing how the account functions within Epayco.

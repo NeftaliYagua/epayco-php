@@ -17,7 +17,7 @@ namespace Epayco;
  * @property string $default_currency The default currency for this country. This applies to both payment methods and bank accounts.
  * @property \Epayco\EpaycoObject $supported_bank_account_currencies Currencies that can be accepted in the specific country (for transfers).
  * @property string[] $supported_payment_currencies Currencies that can be accepted in the specified country (for payments).
- * @property string[] $supported_payment_methods Payment methods available in the specified country. You may need to enable some payment methods (e.g., <a href="https://epayco.com/docs/ach">ACH</a>) on your account before they appear in this list. The <code>epayco</code> payment method refers to <a href="https://epayco.com/docs/connect/destination-charges">charging through your platform</a>.
+ * @property string[] $supported_payment_methods Payment methods available in the specified country. You may need to enable some payment methods (e.g., <a href="https://stripe.com/docs/ach">ACH</a>) on your account before they appear in this list. The <code>epayco</code> payment method refers to <a href="https://stripe.com/docs/connect/destination-charges">charging through your platform</a>.
  * @property string[] $supported_transfer_countries Countries that can accept transfers from the specified country.
  * @property \Epayco\EpaycoObject $verification_fields
  */

@@ -6,11 +6,11 @@ namespace Epayco;
 
 /**
  * Order objects are created to handle end customers' purchases of previously
- * defined <a href="https://epayco.com/docs/api#products">products</a>. You can
+ * defined <a href="https://stripe.com/docs/api#products">products</a>. You can
  * create, retrieve, and pay individual orders, as well as list all orders. Orders
  * are identified by a unique, random ID.
  *
- * Related guide: <a href="https://epayco.com/docs/orders">Tax, Shipping, and
+ * Related guide: <a href="https://stripe.com/docs/orders">Tax, Shipping, and
  * Inventory</a>.
  *
  * @property string $id Unique identifier for the object.
@@ -21,18 +21,18 @@ namespace Epayco;
  * @property null|int $application_fee A fee in cents that will be applied to the order and transferred to the application owner’s Epayco account. The request must be made with an OAuth key or the Epayco-Account header in order to take an application fee. For more information, see the application fees documentation.
  * @property null|string|\Epayco\Charge $charge The ID of the payment used to pay for the order. Present if the order status is <code>paid</code>, <code>fulfilled</code>, or <code>refunded</code>.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://epayco.com/docs/currencies">supported currency</a>.
+ * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://stripe.com/docs/currencies">supported currency</a>.
  * @property null|string|\Epayco\Customer $customer The customer used for the order.
  * @property null|string $email The email address of the customer placing the order.
  * @property string $external_coupon_code External coupon code to load for this order.
  * @property \Epayco\OrderItem[] $items List of items constituting the order. An order can have up to 25 items.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property null|\Epayco\EpaycoObject $metadata Set of <a href="https://epayco.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\Epayco\EpaycoObject $metadata Set of <a href="https://stripe.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property null|\Epayco\Collection $returns A list of returns that have taken place for this order.
  * @property null|string $selected_shipping_method The shipping method that is currently selected for this order, if any. If present, it is equal to one of the <code>id</code>s of shipping methods in the <code>shipping_methods</code> array. At order creation time, if there are multiple shipping methods, Epayco will automatically selected the first method.
  * @property null|\Epayco\EpaycoObject $shipping The shipping address for the order. Present if the order is for goods to be shipped.
  * @property null|\Epayco\EpaycoObject[] $shipping_methods A list of supported shipping methods for this order. The desired shipping method can be specified either by updating the order, or when paying it.
- * @property string $status Current order status. One of <code>created</code>, <code>paid</code>, <code>canceled</code>, <code>fulfilled</code>, or <code>returned</code>. More details in the <a href="https://epayco.com/docs/orders/guide#understanding-order-statuses">Orders Guide</a>.
+ * @property string $status Current order status. One of <code>created</code>, <code>paid</code>, <code>canceled</code>, <code>fulfilled</code>, or <code>returned</code>. More details in the <a href="https://stripe.com/docs/orders/guide#understanding-order-statuses">Orders Guide</a>.
  * @property null|\Epayco\EpaycoObject $status_transitions The timestamps at which the order status was updated.
  * @property null|int $updated Time at which the object was last updated. Measured in seconds since the Unix epoch.
  * @property string $upstream_id The user's order ID if it is different from the Epayco order ID.
