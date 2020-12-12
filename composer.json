@@ -1,17 +1,17 @@
 {
-  "name": "stripe/stripe-php",
-  "description": "Stripe PHP Library",
+  "name": "epayco/epayco-php",
+  "description": "Epayco PHP Library",
   "keywords": [
-    "stripe",
+    "epayco",
     "payment processing",
     "api"
   ],
-  "homepage": "https://stripe.com/",
+  "homepage": "https://epayco.com/",
   "license": "MIT",
   "authors": [
     {
-      "name": "Stripe and contributors",
-      "homepage": "https://github.com/stripe/stripe-php/contributors"
+      "name": "Epayco and contributors",
+      "homepage": "https://github.com/epayco/epayco-php/contributors"
     }
   ],
   "require": {
@@ -29,14 +29,14 @@
   },
   "autoload": {
     "psr-4": {
-      "Stripe\\": "lib/"
+      "Epayco\\": "lib/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Stripe\\": [
+      "Epayco\\": [
         "tests/",
-        "tests/Stripe/"
+        "tests/Epayco/"
       ]
     }
   },

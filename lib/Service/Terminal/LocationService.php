@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\Terminal;
+namespace Epayco\Service\Terminal;
 
-class LocationService extends \Stripe\Service\AbstractService
+class LocationService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of <code>Location</code> objects.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -25,11 +25,11 @@ class LocationService extends \Stripe\Service\AbstractService
      * Creates a new <code>Location</code> object.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Terminal\Location
+     * @return \Epayco\Terminal\Location
      */
     public function create($params = null, $opts = null)
     {
@@ -41,11 +41,11 @@ class LocationService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Terminal\Location
+     * @return \Epayco\Terminal\Location
      */
     public function delete($id, $params = null, $opts = null)
     {
@@ -57,11 +57,11 @@ class LocationService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Terminal\Location
+     * @return \Epayco\Terminal\Location
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -74,11 +74,11 @@ class LocationService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Terminal\Location
+     * @return \Epayco\Terminal\Location
      */
     public function update($id, $params = null, $opts = null)
     {

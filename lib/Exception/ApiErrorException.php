@@ -1,9 +1,9 @@
 <?php
 
-namespace Stripe\Exception;
+namespace Epayco\Exception;
 
 /**
- * Implements properties and methods common to all (non-SPL) Stripe exceptions.
+ * Implements properties and methods common to all (non-SPL) Epayco exceptions.
  */
 abstract class ApiErrorException extends \Exception implements ExceptionInterface
 {
@@ -13,7 +13,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     protected $httpStatus;
     protected $jsonBody;
     protected $requestId;
-    protected $stripeCode;
+    protected $epaycoCode;
 
     /**
      * Creates a new API error exception.
@@ -22,8 +22,8 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
      * @param null|int $httpStatus the HTTP status code
      * @param null|string $httpBody the HTTP body as a string
      * @param null|array $jsonBody the JSON deserialized body
-     * @param null|array|\Stripe\Util\CaseInsensitiveArray $httpHeaders the HTTP headers array
-     * @param null|string $stripeCode the Stripe error code
+     * @param null|array|\Epayco\Util\CaseInsensitiveArray $httpHeaders the HTTP headers array
+     * @param null|string $epaycoCode the Epayco error code
      *
      * @return static
      */
@@ -33,14 +33,14 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
         $httpBody = null,
         $jsonBody = null,
         $httpHeaders = null,
-        $stripeCode = null
+        $epaycoCode = null
     ) {
         $instance = new static($message);
         $instance->setHttpStatus($httpStatus);
         $instance->setHttpBody($httpBody);
         $instance->setJsonBody($jsonBody);
         $instance->setHttpHeaders($httpHeaders);
-        $instance->setStripeCode($stripeCode);
+        $instance->setEpaycoCode($epaycoCode);
 
         $instance->setRequestId(null);
         if ($httpHeaders && isset($httpHeaders['Request-Id'])) {
@@ -53,9 +53,9 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     }
 
     /**
-     * Gets the Stripe error object.
+     * Gets the Epayco error object.
      *
-     * @return null|\Stripe\ErrorObject
+     * @return null|\Epayco\ErrorObject
      */
     public function getError()
     {
@@ -63,9 +63,9 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     }
 
     /**
-     * Sets the Stripe error object.
+     * Sets the Epayco error object.
      *
-     * @param null|\Stripe\ErrorObject $error
+     * @param null|\Epayco\ErrorObject $error
      */
     public function setError($error)
     {
@@ -95,7 +95,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     /**
      * Gets the HTTP headers array.
      *
-     * @return null|array|\Stripe\Util\CaseInsensitiveArray
+     * @return null|array|\Epayco\Util\CaseInsensitiveArray
      */
     public function getHttpHeaders()
     {
@@ -105,7 +105,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     /**
      * Sets the HTTP headers array.
      *
-     * @param null|array|\Stripe\Util\CaseInsensitiveArray $httpHeaders
+     * @param null|array|\Epayco\Util\CaseInsensitiveArray $httpHeaders
      */
     public function setHttpHeaders($httpHeaders)
     {
@@ -153,7 +153,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     }
 
     /**
-     * Gets the Stripe request ID.
+     * Gets the Epayco request ID.
      *
      * @return null|string
      */
@@ -163,7 +163,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     }
 
     /**
-     * Sets the Stripe request ID.
+     * Sets the Epayco request ID.
      *
      * @param null|string $requestId
      */
@@ -173,26 +173,26 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     }
 
     /**
-     * Gets the Stripe error code.
+     * Gets the Epayco error code.
      *
-     * Cf. the `CODE_*` constants on {@see \Stripe\ErrorObject} for possible
+     * Cf. the `CODE_*` constants on {@see \Epayco\ErrorObject} for possible
      * values.
      *
      * @return null|string
      */
-    public function getStripeCode()
+    public function getEpaycoCode()
     {
-        return $this->stripeCode;
+        return $this->epaycoCode;
     }
 
     /**
-     * Sets the Stripe error code.
+     * Sets the Epayco error code.
      *
-     * @param null|string $stripeCode
+     * @param null|string $epaycoCode
      */
-    public function setStripeCode($stripeCode)
+    public function setEpaycoCode($epaycoCode)
     {
-        $this->stripeCode = $stripeCode;
+        $this->epaycoCode = $epaycoCode;
     }
 
     /**
@@ -214,6 +214,6 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
             return null;
         }
 
-        return \Stripe\ErrorObject::constructFrom($this->jsonBody['error']);
+        return \Epayco\ErrorObject::constructFrom($this->jsonBody['error']);
     }
 }

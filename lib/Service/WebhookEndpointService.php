@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class WebhookEndpointService extends \Stripe\Service\AbstractService
+class WebhookEndpointService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of your webhook endpoints.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -33,11 +33,11 @@ class WebhookEndpointService extends \Stripe\Service\AbstractService
      * section of the Dashboard.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\WebhookEndpoint
+     * @return \Epayco\WebhookEndpoint
      */
     public function create($params = null, $opts = null)
     {
@@ -47,15 +47,15 @@ class WebhookEndpointService extends \Stripe\Service\AbstractService
     /**
      * You can also delete webhook endpoints via the <a
      * href="https://dashboard.stripe.com/account/webhooks">webhook endpoint
-     * management</a> page of the Stripe dashboard.
+     * management</a> page of the Epayco dashboard.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\WebhookEndpoint
+     * @return \Epayco\WebhookEndpoint
      */
     public function delete($id, $params = null, $opts = null)
     {
@@ -67,11 +67,11 @@ class WebhookEndpointService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\WebhookEndpoint
+     * @return \Epayco\WebhookEndpoint
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -84,11 +84,11 @@ class WebhookEndpointService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\WebhookEndpoint
+     * @return \Epayco\WebhookEndpoint
      */
     public function update($id, $params = null, $opts = null)
     {

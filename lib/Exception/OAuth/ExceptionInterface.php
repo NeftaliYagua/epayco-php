@@ -1,10 +1,10 @@
 <?php
 
-namespace Stripe\Exception\OAuth;
+namespace Epayco\Exception\OAuth;
 
 /**
- * The base interface for all Stripe OAuth exceptions.
+ * The base interface for all Epayco OAuth exceptions.
  */
-interface ExceptionInterface extends \Stripe\Exception\ExceptionInterface
+interface ExceptionInterface extends \Epayco\Exception\ExceptionInterface
 {
 }

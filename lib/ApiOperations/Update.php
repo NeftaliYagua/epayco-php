@@ -1,12 +1,12 @@
 <?php
 
-namespace Stripe\ApiOperations;
+namespace Epayco\ApiOperations;
 
 /**
  * Trait for updatable resources. Adds an `update()` static method and a
  * `save()` method to the class.
  *
- * This trait should only be applied to classes that derive from StripeObject.
+ * This trait should only be applied to classes that derive from EpaycoObject.
  */
 trait Update
 {
@@ -15,7 +15,7 @@ trait Update
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
      * @return static the updated resource
      */
@@ -25,7 +25,7 @@ trait Update
         $url = static::resourceUrl($id);
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $opts);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Epayco\Util\Util::convertToEpaycoObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -34,7 +34,7 @@ trait Update
     /**
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
      * @return static the saved resource
      */

@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class AccountService extends \Stripe\Service\AbstractService
+class AccountService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of accounts connected to your platform via <a
      * href="/docs/connect">Connect</a>. If you’re not a platform, the list is empty.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -29,11 +29,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function allCapabilities($parentId, $params = null, $opts = null)
     {
@@ -45,11 +45,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function allExternalAccounts($parentId, $params = null, $opts = null)
     {
@@ -63,11 +63,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function allPersons($parentId, $params = null, $opts = null)
     {
@@ -75,17 +75,17 @@ class AccountService extends \Stripe\Service\AbstractService
     }
 
     /**
-     * With <a href="/docs/connect">Connect</a>, you can create Stripe accounts for
+     * With <a href="/docs/connect">Connect</a>, you can create Epayco accounts for
      * your users. To do this, you’ll first need to <a
      * href="https://dashboard.stripe.com/account/applications/settings">register your
      * platform</a>.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Account
+     * @return \Epayco\Account
      */
     public function create($params = null, $opts = null)
     {
@@ -97,11 +97,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\BankAccount|\Stripe\Card
+     * @return \Epayco\BankAccount|\Epayco\Card
      */
     public function createExternalAccount($parentId, $params = null, $opts = null)
     {
@@ -109,7 +109,7 @@ class AccountService extends \Stripe\Service\AbstractService
     }
 
     /**
-     * Creates a single-use login link for an Express account to access their Stripe
+     * Creates a single-use login link for an Express account to access their Epayco
      * dashboard.
      *
      * <strong>You may only create login links for <a
@@ -118,11 +118,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\LoginLink
+     * @return \Epayco\LoginLink
      */
     public function createLoginLink($parentId, $params = null, $opts = null)
     {
@@ -134,11 +134,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Person
+     * @return \Epayco\Person
      */
     public function createPerson($parentId, $params = null, $opts = null)
     {
@@ -158,11 +158,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Account
+     * @return \Epayco\Account
      */
     public function delete($id, $params = null, $opts = null)
     {
@@ -175,11 +175,11 @@ class AccountService extends \Stripe\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\BankAccount|\Stripe\Card
+     * @return \Epayco\BankAccount|\Epayco\Card
      */
     public function deleteExternalAccount($parentId, $id, $params = null, $opts = null)
     {
@@ -196,11 +196,11 @@ class AccountService extends \Stripe\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Person
+     * @return \Epayco\Person
      */
     public function deletePerson($parentId, $id, $params = null, $opts = null)
     {
@@ -215,11 +215,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Account
+     * @return \Epayco\Account
      */
     public function reject($id, $params = null, $opts = null)
     {
@@ -232,11 +232,11 @@ class AccountService extends \Stripe\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Capability
+     * @return \Epayco\Capability
      */
     public function retrieveCapability($parentId, $id, $params = null, $opts = null)
     {
@@ -249,11 +249,11 @@ class AccountService extends \Stripe\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\BankAccount|\Stripe\Card
+     * @return \Epayco\BankAccount|\Epayco\Card
      */
     public function retrieveExternalAccount($parentId, $id, $params = null, $opts = null)
     {
@@ -266,11 +266,11 @@ class AccountService extends \Stripe\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Person
+     * @return \Epayco\Person
      */
     public function retrievePerson($parentId, $id, $params = null, $opts = null)
     {
@@ -291,11 +291,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Account
+     * @return \Epayco\Account
      */
     public function update($id, $params = null, $opts = null)
     {
@@ -308,11 +308,11 @@ class AccountService extends \Stripe\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Capability
+     * @return \Epayco\Capability
      */
     public function updateCapability($parentId, $id, $params = null, $opts = null)
     {
@@ -331,11 +331,11 @@ class AccountService extends \Stripe\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\BankAccount|\Stripe\Card
+     * @return \Epayco\BankAccount|\Epayco\Card
      */
     public function updateExternalAccount($parentId, $id, $params = null, $opts = null)
     {
@@ -348,11 +348,11 @@ class AccountService extends \Stripe\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Person
+     * @return \Epayco\Person
      */
     public function updatePerson($parentId, $id, $params = null, $opts = null)
     {
@@ -364,11 +364,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param null|string $id
      * @param null|array $params
-     * @param null|array|StripeUtilRequestOptions $opts
+     * @param null|array|EpaycoUtilRequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Account
+     * @return \Epayco\Account
      */
     public function retrieve($id = null, $params = null, $opts = null)
     {

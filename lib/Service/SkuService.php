@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class SkuService extends \Stripe\Service\AbstractService
+class SkuService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of your SKUs. The SKUs are returned sorted by creation date, with
      * the most recently created SKUs appearing first.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -26,11 +26,11 @@ class SkuService extends \Stripe\Service\AbstractService
      * Creates a new SKU associated with a product.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\SKU
+     * @return \Epayco\SKU
      */
     public function create($params = null, $opts = null)
     {
@@ -43,11 +43,11 @@ class SkuService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\SKU
+     * @return \Epayco\SKU
      */
     public function delete($id, $params = null, $opts = null)
     {
@@ -56,16 +56,16 @@ class SkuService extends \Stripe\Service\AbstractService
 
     /**
      * Retrieves the details of an existing SKU. Supply the unique SKU identifier from
-     * either a SKU creation request or from the product, and Stripe will return the
+     * either a SKU creation request or from the product, and Epayco will return the
      * corresponding SKU information.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\SKU
+     * @return \Epayco\SKU
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -82,11 +82,11 @@ class SkuService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\SKU
+     * @return \Epayco\SKU
      */
     public function update($id, $params = null, $opts = null)
     {

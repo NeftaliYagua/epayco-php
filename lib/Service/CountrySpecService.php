@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class CountrySpecService extends \Stripe\Service\AbstractService
+class CountrySpecService extends \Epayco\Service\AbstractService
 {
     /**
      * Lists all Country Spec objects available in the API.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -26,11 +26,11 @@ class CountrySpecService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\CountrySpec
+     * @return \Epayco\CountrySpec
      */
     public function retrieve($id, $params = null, $opts = null)
     {

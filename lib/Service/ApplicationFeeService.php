@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class ApplicationFeeService extends \Stripe\Service\AbstractService
+class ApplicationFeeService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of application fees you’ve previously collected. The application
      * fees are returned in sorted order, with the most recent fees appearing first.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -31,11 +31,11 @@ class ApplicationFeeService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function allRefunds($parentId, $params = null, $opts = null)
     {
@@ -44,7 +44,7 @@ class ApplicationFeeService extends \Stripe\Service\AbstractService
 
     /**
      * Refunds an application fee that has previously been collected but not yet
-     * refunded. Funds will be refunded to the Stripe account from which the fee was
+     * refunded. Funds will be refunded to the Epayco account from which the fee was
      * originally collected.
      *
      * You can optionally refund only part of an application fee. You can do so
@@ -56,11 +56,11 @@ class ApplicationFeeService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\ApplicationFeeRefund
+     * @return \Epayco\ApplicationFeeRefund
      */
     public function createRefund($parentId, $params = null, $opts = null)
     {
@@ -73,11 +73,11 @@ class ApplicationFeeService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\ApplicationFee
+     * @return \Epayco\ApplicationFee
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -92,11 +92,11 @@ class ApplicationFeeService extends \Stripe\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\ApplicationFeeRefund
+     * @return \Epayco\ApplicationFeeRefund
      */
     public function retrieveRefund($parentId, $id, $params = null, $opts = null)
     {
@@ -112,11 +112,11 @@ class ApplicationFeeService extends \Stripe\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\ApplicationFeeRefund
+     * @return \Epayco\ApplicationFeeRefund
      */
     public function updateRefund($parentId, $id, $params = null, $opts = null)
     {

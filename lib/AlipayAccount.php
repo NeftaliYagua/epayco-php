@@ -1,12 +1,12 @@
 <?php
 
-namespace Stripe;
+namespace Epayco;
 
 /**
  * Class AlipayAccount.
  *
  * @deprecated Alipay accounts are deprecated. Please use the sources API instead.
- * @see https://stripe.com/docs/sources/alipay
+ * @see https://epayco.com/docs/sources/alipay
  */
 class AlipayAccount extends ApiResource
 {
@@ -40,10 +40,10 @@ class AlipayAccount extends ApiResource
      * @param array|string $_id
      * @param null|array|string $_opts
      *
-     * @throws \Stripe\Exception\BadMethodCallException
+     * @throws \Epayco\Exception\BadMethodCallException
      *
      * @deprecated Alipay accounts are deprecated. Please use the sources API instead.
-     * @see https://stripe.com/docs/sources/alipay
+     * @see https://epayco.com/docs/sources/alipay
      */
     public static function retrieve($_id, $_opts = null)
     {
@@ -59,10 +59,10 @@ class AlipayAccount extends ApiResource
      * @param null|array $_params
      * @param null|array|string $_options
      *
-     * @throws \Stripe\Exception\BadMethodCallException
+     * @throws \Epayco\Exception\BadMethodCallException
      *
      * @deprecated Alipay accounts are deprecated. Please use the sources API instead.
-     * @see https://stripe.com/docs/sources/alipay
+     * @see https://epayco.com/docs/sources/alipay
      */
     public static function update($_id, $_params = null, $_options = null)
     {

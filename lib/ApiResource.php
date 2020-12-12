@@ -1,16 +1,16 @@
 <?php
 
-namespace Stripe;
+namespace Epayco;
 
 /**
  * Class ApiResource.
  */
-abstract class ApiResource extends StripeObject
+abstract class ApiResource extends EpaycoObject
 {
     use ApiOperations\Request;
 
     /**
-     * @return \Stripe\Util\Set A list of fields that can be their own type of
+     * @return \Epayco\Util\Set A list of fields that can be their own type of
      * API resource (say a nested card under an account for example), and if
      * that resource is set, it should be transmitted to the API on a create or
      * update. Doing so is not the default behavior because API resources
@@ -72,7 +72,7 @@ abstract class ApiResource extends StripeObject
      */
     public static function baseUrl()
     {
-        return Stripe::$apiBase;
+        return Epayco::$apiBase;
     }
 
     /**

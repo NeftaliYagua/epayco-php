@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class SubscriptionItemService extends \Stripe\Service\AbstractService
+class SubscriptionItemService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of your subscription items for a given subscription.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -35,11 +35,11 @@ class SubscriptionItemService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function allUsageRecordSummaries($parentId, $params = null, $opts = null)
     {
@@ -51,11 +51,11 @@ class SubscriptionItemService extends \Stripe\Service\AbstractService
      * or replaced.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\SubscriptionItem
+     * @return \Epayco\SubscriptionItem
      */
     public function create($params = null, $opts = null)
     {
@@ -66,17 +66,17 @@ class SubscriptionItemService extends \Stripe\Service\AbstractService
      * Creates a usage record for a specified subscription item and date, and fills it
      * with a quantity.
      *
-     * Usage records provide <code>quantity</code> information that Stripe uses to
+     * Usage records provide <code>quantity</code> information that Epayco uses to
      * track how much a customer is using your service. With usage information and the
      * pricing model set up by the <a
      * href="https://stripe.com/docs/billing/subscriptions/metered-billing">metered
-     * billing</a> plan, Stripe helps you send accurate invoices to your customers.
+     * billing</a> plan, Epayco helps you send accurate invoices to your customers.
      *
      * The default calculation for usage is to add up all the <code>quantity</code>
      * values of the usage records within a billing period. You can change this default
      * behavior with the billing plan’s <code>aggregate_usage</code> <a
      * href="/docs/api/plans/create#create_plan-aggregate_usage">parameter</a>. When
-     * there is more than one usage record with the same timestamp, Stripe adds the
+     * there is more than one usage record with the same timestamp, Epayco adds the
      * <code>quantity</code> values together. In most cases, this is the desired
      * resolution, however, you can change this behavior with the <code>action</code>
      * parameter.
@@ -89,11 +89,11 @@ class SubscriptionItemService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\UsageRecord
+     * @return \Epayco\UsageRecord
      */
     public function createUsageRecord($parentId, $params = null, $opts = null)
     {
@@ -106,11 +106,11 @@ class SubscriptionItemService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\SubscriptionItem
+     * @return \Epayco\SubscriptionItem
      */
     public function delete($id, $params = null, $opts = null)
     {
@@ -122,11 +122,11 @@ class SubscriptionItemService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\SubscriptionItem
+     * @return \Epayco\SubscriptionItem
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -138,11 +138,11 @@ class SubscriptionItemService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\SubscriptionItem
+     * @return \Epayco\SubscriptionItem
      */
     public function update($id, $params = null, $opts = null)
     {

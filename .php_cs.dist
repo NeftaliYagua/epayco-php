@@ -37,9 +37,9 @@ return PhpCsFixer\Config::create()
         'phpdoc_align' => false,
 
         // This is a "risky" rule that causes a bug in our codebase.
-        // Specifically, in `StripeObject.updateAttributes` we construct new
-        // `StripeObject`s for metadata. We can't use `self` there because it
-        // needs to be a raw `StripeObject`.
+        // Specifically, in `EpaycoObject.updateAttributes` we construct new
+        // `EpaycoObject`s for metadata. We can't use `self` there because it
+        // needs to be a raw `EpaycoObject`.
         'self_accessor' => false,
     ])
 ;

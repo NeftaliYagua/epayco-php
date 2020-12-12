@@ -1,9 +1,9 @@
 <?php
 
-namespace Stripe;
+namespace Epayco;
 
 /**
- * Helper trait for Stripe test cases.
+ * Helper trait for Epayco test cases.
  */
 trait TestHelper
 {
@@ -29,21 +29,21 @@ trait TestHelper
     protected function setUpConfig()
     {
         // Save original values so that we can restore them after running tests
-        $this->origApiBase = Stripe::$apiBase;
-        $this->origApiKey = Stripe::getApiKey();
-        $this->origClientId = Stripe::getClientId();
-        $this->origApiVersion = Stripe::getApiVersion();
-        $this->origAccountId = Stripe::getAccountId();
+        $this->origApiBase = Epayco::$apiBase;
+        $this->origApiKey = Epayco::getApiKey();
+        $this->origClientId = Epayco::getClientId();
+        $this->origApiVersion = Epayco::getApiVersion();
+        $this->origAccountId = Epayco::getAccountId();
 
         // Set up host and credentials for stripe-mock
-        Stripe::$apiBase = \defined('MOCK_URL') ? MOCK_URL : 'http://localhost:12111';
-        Stripe::setApiKey('sk_test_123');
-        Stripe::setClientId('ca_123');
-        Stripe::setApiVersion(null);
-        Stripe::setAccountId(null);
+        Epayco::$apiBase = \defined('MOCK_URL') ? MOCK_URL : 'http://localhost:12111';
+        Epayco::setApiKey('sk_test_123');
+        Epayco::setClientId('ca_123');
+        Epayco::setApiVersion(null);
+        Epayco::setAccountId(null);
 
         // Set up the HTTP client mocker
-        $this->clientMock = $this->createMock('\Stripe\HttpClient\ClientInterface');
+        $this->clientMock = $this->createMock('\Epayco\HttpClient\ClientInterface');
 
         // By default, use the real HTTP client
         ApiRequestor::setHttpClient(HttpClient\CurlClient::instance());
@@ -53,12 +53,12 @@ trait TestHelper
     protected function tearDownConfig()
     {
         // Restore original values
-        Stripe::$apiBase = $this->origApiBase;
-        Stripe::setEnableTelemetry(false);
-        Stripe::setApiKey($this->origApiKey);
-        Stripe::setClientId($this->origClientId);
-        Stripe::setApiVersion($this->origApiVersion);
-        Stripe::setAccountId($this->origAccountId);
+        Epayco::$apiBase = $this->origApiBase;
+        Epayco::setEnableTelemetry(false);
+        Epayco::setApiKey($this->origApiKey);
+        Epayco::setClientId($this->origClientId);
+        Epayco::setApiVersion($this->origApiVersion);
+        Epayco::setAccountId($this->origAccountId);
     }
 
     /**
@@ -158,7 +158,7 @@ trait TestHelper
         ApiRequestor::setHttpClient($this->clientMock);
 
         if (null === $base) {
-            $base = Stripe::$apiBase;
+            $base = Epayco::$apiBase;
         }
         $absUrl = $base . $path;
 

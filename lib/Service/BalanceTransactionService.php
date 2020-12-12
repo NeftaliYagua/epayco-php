@@ -2,12 +2,12 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class BalanceTransactionService extends \Stripe\Service\AbstractService
+class BalanceTransactionService extends \Epayco\Service\AbstractService
 {
     /**
-     * Returns a list of transactions that have contributed to the Stripe account
+     * Returns a list of transactions that have contributed to the Epayco account
      * balance (e.g., charges, transfers, and so forth). The transactions are returned
      * in sorted order, with the most recent transactions appearing first.
      *
@@ -15,11 +15,11 @@ class BalanceTransactionService extends \Stripe\Service\AbstractService
      * path <code>/v1/balance/history</code>.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -34,11 +34,11 @@ class BalanceTransactionService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\BalanceTransaction
+     * @return \Epayco\BalanceTransaction
      */
     public function retrieve($id, $params = null, $opts = null)
     {

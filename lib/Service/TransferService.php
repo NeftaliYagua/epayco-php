@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class TransferService extends \Stripe\Service\AbstractService
+class TransferService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of existing transfers sent to connected accounts. The transfers
@@ -12,11 +12,11 @@ class TransferService extends \Stripe\Service\AbstractService
      * first.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -32,11 +32,11 @@ class TransferService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function allReversals($parentId, $params = null, $opts = null)
     {
@@ -46,11 +46,11 @@ class TransferService extends \Stripe\Service\AbstractService
     /**
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Transfer
+     * @return \Epayco\Transfer
      */
     public function cancel($id, $params = null, $opts = null)
     {
@@ -58,16 +58,16 @@ class TransferService extends \Stripe\Service\AbstractService
     }
 
     /**
-     * To send funds from your Stripe account to a connected account, you create a new
-     * transfer object. Your <a href="#balance">Stripe balance</a> must be able to
+     * To send funds from your Epayco account to a connected account, you create a new
+     * transfer object. Your <a href="#balance">Epayco balance</a> must be able to
      * cover the transfer amount, or you’ll receive an “Insufficient Funds” error.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Transfer
+     * @return \Epayco\Transfer
      */
     public function create($params = null, $opts = null)
     {
@@ -86,11 +86,11 @@ class TransferService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\TransferReversal
+     * @return \Epayco\TransferReversal
      */
     public function createReversal($parentId, $params = null, $opts = null)
     {
@@ -99,16 +99,16 @@ class TransferService extends \Stripe\Service\AbstractService
 
     /**
      * Retrieves the details of an existing transfer. Supply the unique transfer ID
-     * from either a transfer creation request or the transfer list, and Stripe will
+     * from either a transfer creation request or the transfer list, and Epayco will
      * return the corresponding transfer information.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Transfer
+     * @return \Epayco\Transfer
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -123,11 +123,11 @@ class TransferService extends \Stripe\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\TransferReversal
+     * @return \Epayco\TransferReversal
      */
     public function retrieveReversal($parentId, $id, $params = null, $opts = null)
     {
@@ -142,11 +142,11 @@ class TransferService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Transfer
+     * @return \Epayco\Transfer
      */
     public function update($id, $params = null, $opts = null)
     {
@@ -162,11 +162,11 @@ class TransferService extends \Stripe\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\TransferReversal
+     * @return \Epayco\TransferReversal
      */
     public function updateReversal($parentId, $id, $params = null, $opts = null)
     {

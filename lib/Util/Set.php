@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe\Util;
+namespace Epayco\Util;
 
 use ArrayIterator;
 use IteratorAggregate;

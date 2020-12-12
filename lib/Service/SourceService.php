@@ -2,18 +2,18 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class SourceService extends \Stripe\Service\AbstractService
+class SourceService extends \Epayco\Service\AbstractService
 {
     /**
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Source
+     * @return \Epayco\Source
      */
     public function allTransactions($id, $params = null, $opts = null)
     {
@@ -24,11 +24,11 @@ class SourceService extends \Stripe\Service\AbstractService
      * Creates a new source object.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Source
+     * @return \Epayco\Source
      */
     public function create($params = null, $opts = null)
     {
@@ -41,11 +41,11 @@ class SourceService extends \Stripe\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Source
+     * @return \Epayco\Source
      */
     public function detach($parentId, $id, $params = null, $opts = null)
     {
@@ -54,16 +54,16 @@ class SourceService extends \Stripe\Service\AbstractService
 
     /**
      * Retrieves an existing source object. Supply the unique source ID from a source
-     * creation request and Stripe will return the corresponding up-to-date source
+     * creation request and Epayco will return the corresponding up-to-date source
      * object information.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Source
+     * @return \Epayco\Source
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -81,11 +81,11 @@ class SourceService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Source
+     * @return \Epayco\Source
      */
     public function update($id, $params = null, $opts = null)
     {
@@ -97,11 +97,11 @@ class SourceService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Source
+     * @return \Epayco\Source
      */
     public function verify($id, $params = null, $opts = null)
     {

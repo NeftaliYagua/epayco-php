@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class SetupIntentService extends \Stripe\Service\AbstractService
+class SetupIntentService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of SetupIntents.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -31,11 +31,11 @@ class SetupIntentService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\SetupIntent
+     * @return \Epayco\SetupIntent
      */
     public function cancel($id, $params = null, $opts = null)
     {
@@ -56,11 +56,11 @@ class SetupIntentService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\SetupIntent
+     * @return \Epayco\SetupIntent
      */
     public function confirm($id, $params = null, $opts = null)
     {
@@ -75,11 +75,11 @@ class SetupIntentService extends \Stripe\Service\AbstractService
      * permissions to charge the payment method later.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\SetupIntent
+     * @return \Epayco\SetupIntent
      */
     public function create($params = null, $opts = null)
     {
@@ -98,11 +98,11 @@ class SetupIntentService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\SetupIntent
+     * @return \Epayco\SetupIntent
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -114,11 +114,11 @@ class SetupIntentService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\SetupIntent
+     * @return \Epayco\SetupIntent
      */
     public function update($id, $params = null, $opts = null)
     {

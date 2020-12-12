@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Epayco;
 
 /**
  * Events are our way of letting you know when something interesting happens in
@@ -21,33 +21,33 @@ namespace Stripe;
  * <code>invoice.payment_failed</code> event will contain an invoice.
  *
  * As with other API resources, you can use endpoints to retrieve an <a
- * href="https://stripe.com/docs/api#retrieve_event">individual event</a> or a <a
- * href="https://stripe.com/docs/api#list_events">list of events</a> from the API.
+ * href="https://epayco.com/docs/api#retrieve_event">individual event</a> or a <a
+ * href="https://epayco.com/docs/api#list_events">list of events</a> from the API.
  * We also have a separate <a
  * href="http://en.wikipedia.org/wiki/Webhook">webhooks</a> system for sending the
  * <code>Event</code> objects directly to an endpoint on your server. Webhooks are
- * managed in your <a href="https://dashboard.stripe.com/account/webhooks">account
- * settings</a>, and our <a href="https://stripe.com/docs/webhooks">Using
+ * managed in your <a href="https://dashboard.epayco.com/account/webhooks">account
+ * settings</a>, and our <a href="https://epayco.com/docs/webhooks">Using
  * Webhooks</a> guide will help you get set up.
  *
- * When using <a href="https://stripe.com/docs/connect">Connect</a>, you can also
+ * When using <a href="https://epayco.com/docs/connect">Connect</a>, you can also
  * receive notifications of events that occur in connected accounts. For these
  * events, there will be an additional <code>account</code> attribute in the
  * received <code>Event</code> object.
  *
  * <strong>NOTE:</strong> Right now, access to events through the <a
- * href="https://stripe.com/docs/api#retrieve_event">Retrieve Event API</a> is
+ * href="https://epayco.com/docs/api#retrieve_event">Retrieve Event API</a> is
  * guaranteed only for 30 days.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
  * @property string $account The connected account that originated the event.
- * @property null|string $api_version The Stripe API version used to render <code>data</code>. <em>Note: This property is populated only for events on or after October 31, 2014</em>.
+ * @property null|string $api_version The Epayco API version used to render <code>data</code>. <em>Note: This property is populated only for events on or after October 31, 2014</em>.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property \Stripe\StripeObject $data
+ * @property \Epayco\EpaycoObject $data
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
  * @property int $pending_webhooks Number of webhooks that have yet to be successfully delivered (i.e., to return a 20x response) to the URLs you've specified.
- * @property null|\Stripe\StripeObject $request Information on the API request that instigated the event.
+ * @property null|\Epayco\EpaycoObject $request Information on the API request that instigated the event.
  * @property string $type Description of the event (e.g., <code>invoice.created</code> or <code>charge.refunded</code>).
  */
 class Event extends ApiResource
@@ -60,7 +60,7 @@ class Event extends ApiResource
     /**
      * Possible string representations of event types.
      *
-     * @see https://stripe.com/docs/api#event_types
+     * @see https://epayco.com/docs/api#event_types
      */
     const ACCOUNT_UPDATED = 'account.updated';
     const ACCOUNT_APPLICATION_AUTHORIZED = 'account.application.authorized';

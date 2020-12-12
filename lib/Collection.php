@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe;
+namespace Epayco;
 
 /**
  * Class Collection.
@@ -8,9 +8,9 @@ namespace Stripe;
  * @property string $object
  * @property string $url
  * @property bool $has_more
- * @property \Stripe\StripeObject[] $data
+ * @property \Epayco\EpaycoObject[] $data
  */
-class Collection extends StripeObject implements \Countable, \IteratorAggregate
+class Collection extends EpaycoObject implements \Countable, \IteratorAggregate
 {
     const OBJECT_NAME = 'list';
 
@@ -24,7 +24,7 @@ class Collection extends StripeObject implements \Countable, \IteratorAggregate
      */
     public static function baseUrl()
     {
-        return Stripe::$apiBase;
+        return Epayco::$apiBase;
     }
 
     /**
@@ -66,10 +66,10 @@ class Collection extends StripeObject implements \Countable, \IteratorAggregate
         list($url, $params) = $this->extractPathAndUpdateParams($params);
 
         list($response, $opts) = $this->_request('get', $url, $params, $opts);
-        $obj = Util\Util::convertToStripeObject($response, $opts);
-        if (!($obj instanceof \Stripe\Collection)) {
-            throw new \Stripe\Exception\UnexpectedValueException(
-                'Expected type ' . \Stripe\Collection::class . ', got "' . \get_class($obj) . '" instead.'
+        $obj = Util\Util::convertToEpaycoObject($response, $opts);
+        if (!($obj instanceof \Epayco\Collection)) {
+            throw new \Epayco\Exception\UnexpectedValueException(
+                'Expected type ' . \Epayco\Collection::class . ', got "' . \get_class($obj) . '" instead.'
             );
         }
         $obj->setFilters($params);
@@ -84,7 +84,7 @@ class Collection extends StripeObject implements \Countable, \IteratorAggregate
 
         list($response, $opts) = $this->_request('post', $url, $params, $opts);
 
-        return Util\Util::convertToStripeObject($response, $opts);
+        return Util\Util::convertToEpaycoObject($response, $opts);
     }
 
     public function retrieve($id, $params = null, $opts = null)
@@ -101,7 +101,7 @@ class Collection extends StripeObject implements \Countable, \IteratorAggregate
             $opts
         );
 
-        return Util\Util::convertToStripeObject($response, $opts);
+        return Util\Util::convertToEpaycoObject($response, $opts);
     }
 
     /**
@@ -131,7 +131,7 @@ class Collection extends StripeObject implements \Countable, \IteratorAggregate
     }
 
     /**
-     * @return \Generator|StripeObject[] A generator that can be used to
+     * @return \Generator|EpaycoObject[] A generator that can be used to
      *    iterate across all objects across all pages. As page boundaries are
      *    encountered, the next page will be fetched automatically for
      *    continued iteration.
@@ -244,7 +244,7 @@ class Collection extends StripeObject implements \Countable, \IteratorAggregate
     /**
      * Gets the first item from the current page. Returns `null` if the current page is empty.
      *
-     * @return null|\Stripe\StripeObject
+     * @return null|\Epayco\EpaycoObject
      */
     public function first()
     {
@@ -254,7 +254,7 @@ class Collection extends StripeObject implements \Countable, \IteratorAggregate
     /**
      * Gets the last item from the current page. Returns `null` if the current page is empty.
      *
-     * @return null|\Stripe\StripeObject
+     * @return null|\Epayco\EpaycoObject
      */
     public function last()
     {

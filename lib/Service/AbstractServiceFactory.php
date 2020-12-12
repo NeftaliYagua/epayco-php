@@ -1,10 +1,10 @@
 <?php
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
 /**
  * Abstract base class for all service factories used to expose service
- * instances through {@link \Stripe\StripeClient}.
+ * instances through {@link \Epayco\EpaycoClient}.
  *
  * Service factories serve two purposes:
  *
@@ -14,14 +14,14 @@ namespace Stripe\Service;
  */
 abstract class AbstractServiceFactory
 {
-    /** @var \Stripe\StripeClientInterface */
+    /** @var \Epayco\EpaycoClientInterface */
     private $client;
 
     /** @var array<string, AbstractService|AbstractServiceFactory> */
     private $services;
 
     /**
-     * @param \Stripe\StripeClientInterface $client
+     * @param \Epayco\EpaycoClientInterface $client
      */
     public function __construct($client)
     {

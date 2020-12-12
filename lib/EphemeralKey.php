@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Epayco;
 
 /**
  * @property string $id Unique identifier for the object.
@@ -10,7 +10,7 @@ namespace Stripe;
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property int $expires Time at which the key will expire. Measured in seconds since the Unix epoch.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property string $secret The key's secret. You can use this value to make authorized requests to the Stripe API.
+ * @property string $secret The key's secret. You can use this value to make authorized requests to the Epayco API.
  * @property array $associated_objects
  */
 class EphemeralKey extends ApiResource
@@ -27,15 +27,15 @@ class EphemeralKey extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\InvalidArgumentException if stripe_version is missing
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\InvalidArgumentException if epayco_version is missing
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\EphemeralKey the created key
+     * @return \Epayco\EphemeralKey the created key
      */
     public static function create($params = null, $opts = null)
     {
-        if (!$opts || !isset($opts['stripe_version'])) {
-            throw new Exception\InvalidArgumentException('stripe_version must be specified to create an ephemeral key');
+        if (!$opts || !isset($opts['epayco_version'])) {
+            throw new Exception\InvalidArgumentException('epayco_version must be specified to create an ephemeral key');
         }
 
         return self::_create($params, $opts);

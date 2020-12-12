@@ -1,22 +1,22 @@
 <?php
 
-namespace Stripe;
+namespace Epayco;
 
 abstract class OAuth
 {
     /**
-     * Generates a URL to Stripe's OAuth form.
+     * Generates a URL to Epayco's OAuth form.
      *
      * @param null|array $params
      * @param null|array $opts
      *
-     * @return string the URL to Stripe's OAuth form
+     * @return string the URL to Epayco's OAuth form
      */
     public static function authorizeUrl($params = null, $opts = null)
     {
         $params = $params ?: [];
 
-        $base = ($opts && \array_key_exists('connect_base', $opts)) ? $opts['connect_base'] : Stripe::$connectBase;
+        $base = ($opts && \array_key_exists('connect_base', $opts)) ? $opts['connect_base'] : Epayco::$connectBase;
 
         $params['client_id'] = self::_getClientId($params);
         if (!\array_key_exists('response_type', $params)) {
@@ -34,13 +34,13 @@ abstract class OAuth
      * @param null|array $params
      * @param null|array $opts
      *
-     * @throws \Stripe\Exception\OAuth\OAuthErrorException if the request fails
+     * @throws \Epayco\Exception\OAuth\OAuthErrorException if the request fails
      *
-     * @return StripeObject object containing the response from the API
+     * @return EpaycoObject object containing the response from the API
      */
     public static function token($params = null, $opts = null)
     {
-        $base = ($opts && \array_key_exists('connect_base', $opts)) ? $opts['connect_base'] : Stripe::$connectBase;
+        $base = ($opts && \array_key_exists('connect_base', $opts)) ? $opts['connect_base'] : Epayco::$connectBase;
         $requestor = new ApiRequestor(null, $base);
         list($response, $apiKey) = $requestor->request(
             'post',
@@ -49,7 +49,7 @@ abstract class OAuth
             null
         );
 
-        return Util\Util::convertToStripeObject($response->json, $opts);
+        return Util\Util::convertToEpaycoObject($response->json, $opts);
     }
 
     /**
@@ -58,14 +58,14 @@ abstract class OAuth
      * @param null|array $params
      * @param null|array $opts
      *
-     * @throws \Stripe\Exception\OAuth\OAuthErrorException if the request fails
+     * @throws \Epayco\Exception\OAuth\OAuthErrorException if the request fails
      *
-     * @return StripeObject object containing the response from the API
+     * @return EpaycoObject object containing the response from the API
      */
     public static function deauthorize($params = null, $opts = null)
     {
         $params = $params ?: [];
-        $base = ($opts && \array_key_exists('connect_base', $opts)) ? $opts['connect_base'] : Stripe::$connectBase;
+        $base = ($opts && \array_key_exists('connect_base', $opts)) ? $opts['connect_base'] : Epayco::$connectBase;
         $requestor = new ApiRequestor(null, $base);
         $params['client_id'] = self::_getClientId($params);
         list($response, $apiKey) = $requestor->request(
@@ -75,23 +75,23 @@ abstract class OAuth
             null
         );
 
-        return Util\Util::convertToStripeObject($response->json, $opts);
+        return Util\Util::convertToEpaycoObject($response->json, $opts);
     }
 
     private static function _getClientId($params = null)
     {
         $clientId = ($params && \array_key_exists('client_id', $params)) ? $params['client_id'] : null;
         if (null === $clientId) {
-            $clientId = Stripe::getClientId();
+            $clientId = Epayco::getClientId();
         }
         if (null === $clientId) {
             $msg = 'No client_id provided.  (HINT: set your client_id using '
-              . '"Stripe::setClientId(<CLIENT-ID>)".  You can find your client_ids '
-              . 'in your Stripe dashboard at '
-              . 'https://dashboard.stripe.com/account/applications/settings, '
+              . '"Epayco::setClientId(<CLIENT-ID>)".  You can find your client_ids '
+              . 'in your Epayco dashboard at '
+              . 'https://dashboard.epayco.com/account/applications/settings, '
               . 'after registering your account as a platform. See '
-              . 'https://stripe.com/docs/connect/standard-accounts for details, '
-              . 'or email support@stripe.com if you have any questions.';
+              . 'https://epayco.com/docs/connect/standard-accounts for details, '
+              . 'or email support@epayco.com if you have any questions.';
 
             throw new Exception\AuthenticationException($msg);
         }

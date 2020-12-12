@@ -1,8 +1,8 @@
 <?php
 
-namespace Stripe\Util;
+namespace Epayco\Util;
 
-use Stripe\StripeObject;
+use Epayco\EpaycoObject;
 
 abstract class Util
 {
@@ -34,20 +34,20 @@ abstract class Util
     }
 
     /**
-     * Converts a response from the Stripe API to the corresponding PHP object.
+     * Converts a response from the Epayco API to the corresponding PHP object.
      *
-     * @param array $resp the response from the Stripe API
+     * @param array $resp the response from the Epayco API
      * @param array $opts
      *
-     * @return array|StripeObject
+     * @return array|EpaycoObject
      */
-    public static function convertToStripeObject($resp, $opts)
+    public static function convertToEpaycoObject($resp, $opts)
     {
-        $types = \Stripe\Util\ObjectTypes::mapping;
+        $types = \Epayco\Util\ObjectTypes::mapping;
         if (self::isList($resp)) {
             $mapped = [];
             foreach ($resp as $i) {
-                $mapped[] = self::convertToStripeObject($i, $opts);
+                $mapped[] = self::convertToEpaycoObject($i, $opts);
             }
 
             return $mapped;
@@ -56,7 +56,7 @@ abstract class Util
             if (isset($resp['object']) && \is_string($resp['object']) && isset($types[$resp['object']])) {
                 $class = $types[$resp['object']];
             } else {
-                $class = \Stripe\StripeObject::class;
+                $class = \Epayco\EpaycoObject::class;
             }
 
             return $class::constructFrom($resp, $opts);
@@ -80,7 +80,7 @@ abstract class Util
                 \trigger_error('It looks like the mbstring extension is not enabled. ' .
                     'UTF-8 strings will not properly be encoded. Ask your system ' .
                     'administrator to enable the mbstring extension, or write to ' .
-                    'support@stripe.com if you have any questions.', \E_USER_WARNING);
+                    'support@epayco.com if you have any questions.', \E_USER_WARNING);
             }
         }
 
@@ -132,7 +132,7 @@ abstract class Util
      */
     public static function objectsToIds($h)
     {
-        if ($h instanceof \Stripe\ApiResource) {
+        if ($h instanceof \Epayco\ApiResource) {
             return $h->id;
         }
         if (static::isList($h)) {

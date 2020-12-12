@@ -2,8 +2,8 @@
 
 // File generated from our OpenAPI spec
 
-// Stripe singleton
-require __DIR__ . '/lib/Stripe.php';
+// Epayco singleton
+require __DIR__ . '/lib/Epayco.php';
 
 // Utilities
 require __DIR__ . '/lib/Util/CaseInsensitiveArray.php';
@@ -58,19 +58,19 @@ require __DIR__ . '/lib/ApiOperations/Update.php';
 // Plumbing
 require __DIR__ . '/lib/ApiResponse.php';
 require __DIR__ . '/lib/RequestTelemetry.php';
-require __DIR__ . '/lib/StripeObject.php';
+require __DIR__ . '/lib/EpaycoObject.php';
 require __DIR__ . '/lib/ApiRequestor.php';
 require __DIR__ . '/lib/ApiResource.php';
 require __DIR__ . '/lib/SingletonApiResource.php';
 require __DIR__ . '/lib/Service/AbstractService.php';
 require __DIR__ . '/lib/Service/AbstractServiceFactory.php';
 
-// StripeClient
-require __DIR__ . '/lib/StripeClientInterface.php';
-require __DIR__ . '/lib/BaseStripeClient.php';
-require __DIR__ . '/lib/StripeClient.php';
+// EpaycoClient
+require __DIR__ . '/lib/EpaycoClientInterface.php';
+require __DIR__ . '/lib/BaseEpaycoClient.php';
+require __DIR__ . '/lib/EpaycoClient.php';
 
-// Stripe API Resources
+// Epayco API Resources
 require __DIR__ . '/lib/Account.php';
 require __DIR__ . '/lib/AccountLink.php';
 require __DIR__ . '/lib/AlipayAccount.php';

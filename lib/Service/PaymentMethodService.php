@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class PaymentMethodService extends \Stripe\Service\AbstractService
+class PaymentMethodService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of PaymentMethods for a given Customer.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -42,11 +42,11 @@ class PaymentMethodService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\PaymentMethod
+     * @return \Epayco\PaymentMethod
      */
     public function attach($id, $params = null, $opts = null)
     {
@@ -55,15 +55,15 @@ class PaymentMethodService extends \Stripe\Service\AbstractService
 
     /**
      * Creates a PaymentMethod object. Read the <a
-     * href="/docs/stripe-js/reference#stripe-create-payment-method">Stripe.js
-     * reference</a> to learn how to create PaymentMethods via Stripe.js.
+     * href="/docs/stripe-js/reference#stripe-create-payment-method">Epayco.js
+     * reference</a> to learn how to create PaymentMethods via Epayco.js.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\PaymentMethod
+     * @return \Epayco\PaymentMethod
      */
     public function create($params = null, $opts = null)
     {
@@ -75,11 +75,11 @@ class PaymentMethodService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\PaymentMethod
+     * @return \Epayco\PaymentMethod
      */
     public function detach($id, $params = null, $opts = null)
     {
@@ -91,11 +91,11 @@ class PaymentMethodService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\PaymentMethod
+     * @return \Epayco\PaymentMethod
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -108,11 +108,11 @@ class PaymentMethodService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\PaymentMethod
+     * @return \Epayco\PaymentMethod
      */
     public function update($id, $params = null, $opts = null)
     {

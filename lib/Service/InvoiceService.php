@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class InvoiceService extends \Stripe\Service\AbstractService
+class InvoiceService extends \Epayco\Service\AbstractService
 {
     /**
      * You can list all invoices, or list the invoices for a specific customer. The
@@ -12,11 +12,11 @@ class InvoiceService extends \Stripe\Service\AbstractService
      * invoices appearing first.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -31,11 +31,11 @@ class InvoiceService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function allLines($parentId, $params = null, $opts = null)
     {
@@ -51,11 +51,11 @@ class InvoiceService extends \Stripe\Service\AbstractService
      * your customers.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Invoice
+     * @return \Epayco\Invoice
      */
     public function create($params = null, $opts = null)
     {
@@ -70,11 +70,11 @@ class InvoiceService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Invoice
+     * @return \Epayco\Invoice
      */
     public function delete($id, $params = null, $opts = null)
     {
@@ -82,17 +82,17 @@ class InvoiceService extends \Stripe\Service\AbstractService
     }
 
     /**
-     * Stripe automatically finalizes drafts before sending and attempting payment on
+     * Epayco automatically finalizes drafts before sending and attempting payment on
      * invoices. However, if you’d like to finalize a draft invoice manually, you can
      * do so using this method.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Invoice
+     * @return \Epayco\Invoice
      */
     public function finalizeInvoice($id, $params = null, $opts = null)
     {
@@ -105,11 +105,11 @@ class InvoiceService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Invoice
+     * @return \Epayco\Invoice
      */
     public function markUncollectible($id, $params = null, $opts = null)
     {
@@ -117,7 +117,7 @@ class InvoiceService extends \Stripe\Service\AbstractService
     }
 
     /**
-     * Stripe automatically creates and then attempts to collect payment on invoices
+     * Epayco automatically creates and then attempts to collect payment on invoices
      * for customers on subscriptions according to your <a
      * href="https://dashboard.stripe.com/account/billing/automatic">subscriptions
      * settings</a>. However, if you’d like to attempt payment on an invoice out of the
@@ -125,11 +125,11 @@ class InvoiceService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Invoice
+     * @return \Epayco\Invoice
      */
     public function pay($id, $params = null, $opts = null)
     {
@@ -141,11 +141,11 @@ class InvoiceService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Invoice
+     * @return \Epayco\Invoice
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -153,7 +153,7 @@ class InvoiceService extends \Stripe\Service\AbstractService
     }
 
     /**
-     * Stripe will automatically send invoices to customers according to your <a
+     * Epayco will automatically send invoices to customers according to your <a
      * href="https://dashboard.stripe.com/account/billing/automatic">subscriptions
      * settings</a>. However, if you’d like to manually send an invoice to your
      * customer out of the normal schedule, you can do so. When sending invoices that
@@ -164,11 +164,11 @@ class InvoiceService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Invoice
+     * @return \Epayco\Invoice
      */
     public function sendInvoice($id, $params = null, $opts = null)
     {
@@ -199,11 +199,11 @@ class InvoiceService extends \Stripe\Service\AbstractService
      * the <code>subscription_proration_date</code> on the upcoming invoice resource.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Invoice
+     * @return \Epayco\Invoice
      */
     public function upcoming($params = null, $opts = null)
     {
@@ -217,11 +217,11 @@ class InvoiceService extends \Stripe\Service\AbstractService
      * line items.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Invoice
+     * @return \Epayco\Invoice
      */
     public function upcomingLines($params = null, $opts = null)
     {
@@ -233,18 +233,18 @@ class InvoiceService extends \Stripe\Service\AbstractService
      * href="/docs/billing/invoices/workflow#finalized">finalized</a>, monetary values,
      * as well as <code>collection_method</code>, become uneditable.
      *
-     * If you would like to stop the Stripe Billing engine from automatically
+     * If you would like to stop the Epayco Billing engine from automatically
      * finalizing, reattempting payments on, sending reminders for, or <a
      * href="/docs/billing/invoices/reconciliation">automatically reconciling</a>
      * invoices, pass <code>auto_advance=false</code>.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Invoice
+     * @return \Epayco\Invoice
      */
     public function update($id, $params = null, $opts = null)
     {
@@ -259,11 +259,11 @@ class InvoiceService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Invoice
+     * @return \Epayco\Invoice
      */
     public function voidInvoice($id, $params = null, $opts = null)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe;
+namespace Epayco;
 
 /**
  * Class OrderItem.
@@ -13,7 +13,7 @@ namespace Stripe;
  * @property int $quantity
  * @property string $type
  */
-class OrderItem extends StripeObject
+class OrderItem extends EpaycoObject
 {
     const OBJECT_NAME = 'order_item';
 }

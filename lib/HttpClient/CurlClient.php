@@ -1,10 +1,10 @@
 <?php
 
-namespace Stripe\HttpClient;
+namespace Epayco\HttpClient;
 
-use Stripe\Exception;
-use Stripe\Stripe;
-use Stripe\Util;
+use Epayco\Exception;
+use Epayco\Epayco;
+use Epayco\Util;
 
 // @codingStandardsIgnoreStart
 // PSR2 requires all constants be upper case. Sadly, the CURL_SSLVERSION
@@ -39,7 +39,7 @@ class CurlClient implements ClientInterface
 
     protected $defaultOptions;
 
-    /** @var \Stripe\Util\RandomGenerator */
+    /** @var \Epayco\Util\RandomGenerator */
     protected $randomGenerator;
 
     protected $userAgentInfo;
@@ -64,7 +64,7 @@ class CurlClient implements ClientInterface
      * throw an exception if $defaultOptions returns a non-array value.
      *
      * @param null|array|callable $defaultOptions
-     * @param null|\Stripe\Util\RandomGenerator $randomGenerator
+     * @param null|\Epayco\Util\RandomGenerator $randomGenerator
      */
     public function __construct($defaultOptions = null, $randomGenerator = null)
     {
@@ -145,7 +145,7 @@ class CurlClient implements ClientInterface
      * <ol>
      *   <li>string $rbody The response body</li>
      *   <li>integer $rcode The response status code</li>
-     *   <li>\Stripe\Util\CaseInsensitiveArray $rheaders The response headers</li>
+     *   <li>\Epayco\Util\CaseInsensitiveArray $rheaders The response headers</li>
      *   <li>integer $errno The curl error number</li>
      *   <li>string|null $message The curl error message</li>
      *   <li>boolean $shouldRetry Whether the request will be retried</li>
@@ -235,7 +235,7 @@ class CurlClient implements ClientInterface
 
         // It is only safe to retry network failures on POST requests if we
         // add an Idempotency-Key header
-        if (('post' === $method) && (Stripe::$maxNetworkRetries > 0)) {
+        if (('post' === $method) && (Epayco::$maxNetworkRetries > 0)) {
             if (!$this->hasHeader($headers, 'Idempotency-Key')) {
                 $headers[] = 'Idempotency-Key: ' . $this->randomGenerator->uuid();
             }
@@ -261,8 +261,8 @@ class CurlClient implements ClientInterface
         $opts[\CURLOPT_CONNECTTIMEOUT] = $this->connectTimeout;
         $opts[\CURLOPT_TIMEOUT] = $this->timeout;
         $opts[\CURLOPT_HTTPHEADER] = $headers;
-        $opts[\CURLOPT_CAINFO] = Stripe::getCABundlePath();
-        if (!Stripe::getVerifySslCerts()) {
+        $opts[\CURLOPT_CAINFO] = Epayco::getCABundlePath();
+        if (!Epayco::getVerifySslCerts()) {
             $opts[\CURLOPT_SSL_VERIFYPEER] = false;
         }
 
@@ -271,8 +271,8 @@ class CurlClient implements ClientInterface
             $opts[\CURLOPT_HTTP_VERSION] = \CURL_HTTP_VERSION_2TLS;
         }
 
-        // Stripe's API servers are only accessible over IPv4. Force IPv4 resolving to avoid
-        // potential issues (cf. https://github.com/stripe/stripe-php/issues/1045).
+        // Epayco's API servers are only accessible over IPv4. Force IPv4 resolving to avoid
+        // potential issues (cf. https://github.com/epayco/epayco-php/issues/1045).
         $opts[\CURLOPT_IPRESOLVE] = \CURL_IPRESOLVE_V4;
 
         list($rbody, $rcode, $rheaders) = $this->executeRequestWithRetries($opts, $absUrl);
@@ -360,16 +360,16 @@ class CurlClient implements ClientInterface
             case \CURLE_COULDNT_CONNECT:
             case \CURLE_COULDNT_RESOLVE_HOST:
             case \CURLE_OPERATION_TIMEOUTED:
-                $msg = "Could not connect to Stripe ({$url}).  Please check your "
+                $msg = "Could not connect to Epayco ({$url}).  Please check your "
                  . 'internet connection and try again.  If this problem persists, '
-                 . "you should check Stripe's service status at "
-                 . 'https://twitter.com/stripestatus, or';
+                 . "you should check Epayco's service status at "
+                 . 'https://twitter.com/epaycostatus, or';
 
                 break;
 
             case \CURLE_SSL_CACERT:
             case \CURLE_SSL_PEER_CERTIFICATE:
-                $msg = "Could not verify Stripe's SSL certificate.  Please make sure "
+                $msg = "Could not verify Epayco's SSL certificate.  Please make sure "
                  . 'that your network is not intercepting certificates.  '
                  . "(Try going to {$url} in your browser.)  "
                  . 'If this problem persists,';
@@ -377,10 +377,10 @@ class CurlClient implements ClientInterface
                 break;
 
             default:
-                $msg = 'Unexpected error communicating with Stripe.  '
+                $msg = 'Unexpected error communicating with Epayco.  '
                  . 'If this problem persists,';
         }
-        $msg .= ' let us know at support@stripe.com.';
+        $msg .= ' let us know at support@epayco.com.';
 
         $msg .= "\n\n(Network error [errno {$errno}]: {$message})";
 
@@ -398,14 +398,14 @@ class CurlClient implements ClientInterface
      *
      * @param int $errno
      * @param int $rcode
-     * @param array|\Stripe\Util\CaseInsensitiveArray $rheaders
+     * @param array|\Epayco\Util\CaseInsensitiveArray $rheaders
      * @param int $numRetries
      *
      * @return bool
      */
     private function shouldRetry($errno, $rcode, $rheaders, $numRetries)
     {
-        if ($numRetries >= Stripe::getMaxNetworkRetries()) {
+        if ($numRetries >= Epayco::getMaxNetworkRetries()) {
             return false;
         }
 
@@ -423,11 +423,11 @@ class CurlClient implements ClientInterface
 
         // The API may ask us not to retry (eg; if doing so would be a no-op)
         // or advise us to retry (eg; in cases of lock timeouts); we defer to that.
-        if (isset($rheaders['stripe-should-retry'])) {
-            if ('false' === $rheaders['stripe-should-retry']) {
+        if (isset($rheaders['epayco-should-retry'])) {
+            if ('false' === $rheaders['epayco-should-retry']) {
                 return false;
             }
-            if ('true' === $rheaders['stripe-should-retry']) {
+            if ('true' === $rheaders['epayco-should-retry']) {
                 return true;
             }
         }
@@ -439,7 +439,7 @@ class CurlClient implements ClientInterface
 
         // Retry on 500, 503, and other internal errors.
         //
-        // Note that we expect the stripe-should-retry header to be false
+        // Note that we expect the epayco-should-retry header to be false
         // in most cases when a 500 is returned, since our idempotency framework
         // would typically replay it anyway.
         if ($rcode >= 500) {
@@ -453,7 +453,7 @@ class CurlClient implements ClientInterface
      * Provides the number of seconds to wait before retrying a request.
      *
      * @param int $numRetries
-     * @param array|\Stripe\Util\CaseInsensitiveArray $rheaders
+     * @param array|\Epayco\Util\CaseInsensitiveArray $rheaders
      *
      * @return int
      */
@@ -463,8 +463,8 @@ class CurlClient implements ClientInterface
         // number of $numRetries so far as inputs. Do not allow the number to exceed
         // $maxNetworkRetryDelay.
         $sleepSeconds = \min(
-            Stripe::getInitialNetworkRetryDelay() * 1.0 * 2 ** ($numRetries - 1),
-            Stripe::getMaxNetworkRetryDelay()
+            Epayco::getInitialNetworkRetryDelay() * 1.0 * 2 ** ($numRetries - 1),
+            Epayco::getMaxNetworkRetryDelay()
         );
 
         // Apply some jitter by randomizing the value in the range of
@@ -472,11 +472,11 @@ class CurlClient implements ClientInterface
         $sleepSeconds *= 0.5 * (1 + $this->randomGenerator->randFloat());
 
         // But never sleep less than the base sleep seconds.
-        $sleepSeconds = \max(Stripe::getInitialNetworkRetryDelay(), $sleepSeconds);
+        $sleepSeconds = \max(Epayco::getInitialNetworkRetryDelay(), $sleepSeconds);
 
         // And never sleep less than the time the API asks us to wait, assuming it's a reasonable ask.
         $retryAfter = isset($rheaders['retry-after']) ? (float) ($rheaders['retry-after']) : 0.0;
-        if (\floor($retryAfter) === $retryAfter && $retryAfter <= Stripe::getMaxRetryAfter()) {
+        if (\floor($retryAfter) === $retryAfter && $retryAfter <= Epayco::getMaxRetryAfter()) {
             $sleepSeconds = \max($sleepSeconds, $retryAfter);
         }
 
@@ -524,7 +524,7 @@ class CurlClient implements ClientInterface
     private function canSafelyUseHttp2()
     {
         // Versions of curl older than 7.60.0 don't respect GOAWAY frames
-        // (cf. https://github.com/curl/curl/issues/2416), which Stripe use.
+        // (cf. https://github.com/curl/curl/issues/2416), which Epayco use.
         $curlVersion = \curl_version()['version'];
 
         return \version_compare($curlVersion, '7.60.0') >= 0;

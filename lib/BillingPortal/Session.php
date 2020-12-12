@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\BillingPortal;
+namespace Epayco\BillingPortal;
 
 /**
  * A session describes the instantiation of the customer portal for a particular
@@ -13,7 +13,7 @@ namespace Stripe\BillingPortal;
  * billing details.
  *
  * Integration guide: <a
- * href="https://stripe.com/docs/billing/subscriptions/integrating-customer-portal">Billing
+ * href="https://epayco.com/docs/billing/subscriptions/integrating-customer-portal">Billing
  * customer portal</a>.
  *
  * @property string $id Unique identifier for the object.
@@ -21,12 +21,12 @@ namespace Stripe\BillingPortal;
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property string $customer The ID of the customer for this session.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property string $return_url The URL to which Stripe should send customers when they click on the link to return to your website.
+ * @property string $return_url The URL to which Epayco should send customers when they click on the link to return to your website.
  * @property string $url The short-lived URL of the session giving customers access to the customer portal.
  */
-class Session extends \Stripe\ApiResource
+class Session extends \Epayco\ApiResource
 {
     const OBJECT_NAME = 'billing_portal.session';
 
-    use \Stripe\ApiOperations\Create;
+    use \Epayco\ApiOperations\Create;
 }

@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\BillingPortal;
+namespace Epayco\Service\BillingPortal;
 
-class SessionService extends \Stripe\Service\AbstractService
+class SessionService extends \Epayco\Service\AbstractService
 {
     /**
      * Creates a session of the customer portal.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\BillingPortal\Session
+     * @return \Epayco\BillingPortal\Session
      */
     public function create($params = null, $opts = null)
     {

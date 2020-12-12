@@ -2,15 +2,15 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Epayco;
 
 /**
  * Account Links are the means by which a Connect platform grants a connected
- * account permission to access Stripe-hosted applications, such as Connect
+ * account permission to access Epayco-hosted applications, such as Connect
  * Onboarding.
  *
  * Related guide: <a
- * href="https://stripe.com/docs/connect/connect-onboarding">Connect
+ * href="https://epayco.com/docs/connect/connect-onboarding">Connect
  * Onboarding</a>.
  *
  * @property string $object String representing the object's type. Objects of the same type share the same value.

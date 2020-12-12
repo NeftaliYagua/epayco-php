@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\Issuing;
+namespace Epayco\Service\Issuing;
 
 /**
  * Service factory class for API resources in the Issuing namespace.
@@ -13,7 +13,7 @@ namespace Stripe\Service\Issuing;
  * @property DisputeService $disputes
  * @property TransactionService $transactions
  */
-class IssuingServiceFactory extends \Stripe\Service\AbstractServiceFactory
+class IssuingServiceFactory extends \Epayco\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

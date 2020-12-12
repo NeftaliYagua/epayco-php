@@ -1,13 +1,13 @@
 <?php
 
-namespace Stripe;
+namespace Epayco;
 
 /**
  * Class SourceTransaction.
  *
  * @property string $id
  * @property string $object
- * @property \Stripe\StripeObject $ach_credit_transfer
+ * @property \Epayco\EpaycoObject $ach_credit_transfer
  * @property int $amount
  * @property int $created
  * @property string $customer_data

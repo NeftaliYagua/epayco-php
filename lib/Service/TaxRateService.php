@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class TaxRateService extends \Stripe\Service\AbstractService
+class TaxRateService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of your tax rates. Tax rates are returned sorted by creation
      * date, with the most recently created tax rates appearing first.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -26,11 +26,11 @@ class TaxRateService extends \Stripe\Service\AbstractService
      * Creates a new tax rate.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\TaxRate
+     * @return \Epayco\TaxRate
      */
     public function create($params = null, $opts = null)
     {
@@ -42,11 +42,11 @@ class TaxRateService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\TaxRate
+     * @return \Epayco\TaxRate
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -58,11 +58,11 @@ class TaxRateService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\TaxRate
+     * @return \Epayco\TaxRate
      */
     public function update($id, $params = null, $opts = null)
     {

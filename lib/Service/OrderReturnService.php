@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class OrderReturnService extends \Stripe\Service\AbstractService
+class OrderReturnService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of your order returns. The returns are returned sorted by
      * creation date, with the most recently created return appearing first.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -25,15 +25,15 @@ class OrderReturnService extends \Stripe\Service\AbstractService
     /**
      * Retrieves the details of an existing order return. Supply the unique order ID
      * from either an order return creation request or the order return list, and
-     * Stripe will return the corresponding order information.
+     * Epayco will return the corresponding order information.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\OrderReturn
+     * @return \Epayco\OrderReturn
      */
     public function retrieve($id, $params = null, $opts = null)
     {

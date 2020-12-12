@@ -1,8 +1,8 @@
 <?php
 
-namespace Stripe;
+namespace Epayco;
 
-use Stripe\Util\CaseInsensitiveArray;
+use Epayco\Util\CaseInsensitiveArray;
 
 /**
  * Class ApiResponse.

@@ -24,7 +24,7 @@
             <extensions>
                 <extension>php</extension>
             </extensions>
-            <default-package-name>stripe-php</default-package-name>
+            <default-package-name>epayco-php</default-package-name>
         </api>
     </version>
     <template name="default"/>

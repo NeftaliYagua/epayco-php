@@ -2,14 +2,14 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Epayco;
 
 /**
- * Usage records allow you to report customer usage and metrics to Stripe for
+ * Usage records allow you to report customer usage and metrics to Epayco for
  * metered billing of subscription prices.
  *
  * Related guide: <a
- * href="https://stripe.com/docs/billing/subscriptions/metered-billing">Metered
+ * href="https://epayco.com/docs/billing/subscriptions/metered-billing">Metered
  * Billing</a>.
  *
  * @property string $id Unique identifier for the object.

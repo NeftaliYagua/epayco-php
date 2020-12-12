@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class EphemeralKeyService extends \Stripe\Service\AbstractService
+class EphemeralKeyService extends \Epayco\Service\AbstractService
 {
     /**
      * Invalidates a short-lived API key for a given resource.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\EphemeralKey
+     * @return \Epayco\EphemeralKey
      */
     public function delete($id, $params = null, $opts = null)
     {
@@ -26,16 +26,16 @@ class EphemeralKeyService extends \Stripe\Service\AbstractService
      * Creates a short-lived API key for a given resource.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\EphemeralKey
+     * @return \Epayco\EphemeralKey
      */
     public function create($params = null, $opts = null)
     {
-        if (!$opts || !isset($opts['stripe_version'])) {
-            throw new \Stripe\Exception\InvalidArgumentException('stripe_version must be specified to create an ephemeral key');
+        if (!$opts || !isset($opts['epayco_version'])) {
+            throw new \Epayco\Exception\InvalidArgumentException('epayco_version must be specified to create an ephemeral key');
         }
 
         return $this->request('post', '/v1/ephemeral_keys', $params, $opts);

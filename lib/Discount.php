@@ -1,14 +1,14 @@
 <?php
 
-namespace Stripe;
+namespace Epayco;
 
 /**
  * Class Discount.
  *
  * @property string $object
  * @property string $checkout_session The Checkout session that this coupon is applied to, if it is applied to a particular session in payment mode. Will not be present for subscription mode.
- * @property \Stripe\Coupon $coupon Hash describing the coupon applied to create this discount.
- * @property string|\Stripe\Customer $customer The ID of the customer associated with this discount.
+ * @property \Epayco\Coupon $coupon Hash describing the coupon applied to create this discount.
+ * @property string|\Epayco\Customer $customer The ID of the customer associated with this discount.
  * @property int $end If the coupon has a duration of repeating, the date that this discount will end. If the coupon has a duration of once or forever, this attribute will be null.
  * @property string $id The ID of the discount object.
  * @property string $invoice The invoice that the discount’s coupon was applied to, if it was applied directly to a particular invoice.
@@ -18,7 +18,7 @@ namespace Stripe;
  * @property int $start Date that the coupon was applied.
  * @property string $subscription The subscription that this coupon is applied to, if it is applied to a particular subscription.
  */
-class Discount extends StripeObject
+class Discount extends EpaycoObject
 {
     const OBJECT_NAME = 'discount';
 }

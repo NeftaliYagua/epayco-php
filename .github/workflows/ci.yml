@@ -63,8 +63,8 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
-      - name: Start stripe-mock
-        run: docker run -d -p 12111-12112:12111-12112 stripemock/stripe-mock && sleep 5
+      - name: Start epayco-mock
+        run: docker run -d -p 12111-12112:12111-12112 epaycomock/epayco-mock && sleep 5
 
       - name: Run test suite
         run: |

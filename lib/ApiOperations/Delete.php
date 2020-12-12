@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe\ApiOperations;
+namespace Epayco\ApiOperations;
 
 /**
  * Trait for deletable resources. Adds a `delete()` method to the class.
  *
- * This trait should only be applied to classes that derive from StripeObject.
+ * This trait should only be applied to classes that derive from EpaycoObject.
  */
 trait Delete
 {
@@ -13,7 +13,7 @@ trait Delete
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
      * @return static the deleted resource
      */

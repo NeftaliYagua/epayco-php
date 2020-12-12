@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class PromotionCodeService extends \Stripe\Service\AbstractService
+class PromotionCodeService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of your promotion codes.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -26,11 +26,11 @@ class PromotionCodeService extends \Stripe\Service\AbstractService
      * specific customer, redemption limit, and expiration date.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\PromotionCode
+     * @return \Epayco\PromotionCode
      */
     public function create($params = null, $opts = null)
     {
@@ -42,11 +42,11 @@ class PromotionCodeService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\PromotionCode
+     * @return \Epayco\PromotionCode
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -59,11 +59,11 @@ class PromotionCodeService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\PromotionCode
+     * @return \Epayco\PromotionCode
      */
     public function update($id, $params = null, $opts = null)
     {

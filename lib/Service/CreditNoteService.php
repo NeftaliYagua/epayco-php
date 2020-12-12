@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class CreditNoteService extends \Stripe\Service\AbstractService
+class CreditNoteService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of credit notes.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -28,11 +28,11 @@ class CreditNoteService extends \Stripe\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function allLines($parentId, $params = null, $opts = null)
     {
@@ -50,11 +50,11 @@ class CreditNoteService extends \Stripe\Service\AbstractService
      * an existing refund (using <code>refund</code>).</li> <li>Customer balance
      * credit: credit the customer’s balance (using <code>credit_amount</code>) which
      * will be automatically applied to their next invoice when it’s finalized.</li>
-     * <li>Outside of Stripe credit: record the amount that is or will be credited
-     * outside of Stripe (using <code>out_of_band_amount</code>).</li> </ul>
+     * <li>Outside of Epayco credit: record the amount that is or will be credited
+     * outside of Epayco (using <code>out_of_band_amount</code>).</li> </ul>
      *
      * For post-payment credit notes the sum of the refund, credit and outside of
-     * Stripe amounts must equal the credit note total.
+     * Epayco amounts must equal the credit note total.
      *
      * You may issue multiple credit notes for an invoice. Each credit note will
      * increment the invoice’s <code>pre_payment_credit_notes_amount</code> or
@@ -62,11 +62,11 @@ class CreditNoteService extends \Stripe\Service\AbstractService
      * <code>status</code> at the time of credit note creation.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\CreditNote
+     * @return \Epayco\CreditNote
      */
     public function create($params = null, $opts = null)
     {
@@ -77,11 +77,11 @@ class CreditNoteService extends \Stripe\Service\AbstractService
      * Get a preview of a credit note without creating it.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\CreditNote
+     * @return \Epayco\CreditNote
      */
     public function preview($params = null, $opts = null)
     {
@@ -94,11 +94,11 @@ class CreditNoteService extends \Stripe\Service\AbstractService
      * the full (paginated) list of line items.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\CreditNote
+     * @return \Epayco\CreditNote
      */
     public function previewLines($params = null, $opts = null)
     {
@@ -110,11 +110,11 @@ class CreditNoteService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\CreditNote
+     * @return \Epayco\CreditNote
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -126,11 +126,11 @@ class CreditNoteService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\CreditNote
+     * @return \Epayco\CreditNote
      */
     public function update($id, $params = null, $opts = null)
     {
@@ -143,11 +143,11 @@ class CreditNoteService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\CreditNote
+     * @return \Epayco\CreditNote
      */
     public function voidCreditNote($id, $params = null, $opts = null)
     {

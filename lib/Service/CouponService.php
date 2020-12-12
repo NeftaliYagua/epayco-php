@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class CouponService extends \Stripe\Service\AbstractService
+class CouponService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of your coupons.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -24,7 +24,7 @@ class CouponService extends \Stripe\Service\AbstractService
     /**
      * You can create coupons easily via the <a
      * href="https://dashboard.stripe.com/coupons">coupon management</a> page of the
-     * Stripe dashboard. Coupon creation is also accessible via the API if you need to
+     * Epayco dashboard. Coupon creation is also accessible via the API if you need to
      * create coupons on the fly.
      *
      * A coupon has either a <code>percent_off</code> or an <code>amount_off</code> and
@@ -38,11 +38,11 @@ class CouponService extends \Stripe\Service\AbstractService
      * it.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Coupon
+     * @return \Epayco\Coupon
      */
     public function create($params = null, $opts = null)
     {
@@ -52,17 +52,17 @@ class CouponService extends \Stripe\Service\AbstractService
     /**
      * You can delete coupons via the <a
      * href="https://dashboard.stripe.com/coupons">coupon management</a> page of the
-     * Stripe dashboard. However, deleting a coupon does not affect any customers who
+     * Epayco dashboard. However, deleting a coupon does not affect any customers who
      * have already applied the coupon; it means that new customers can’t redeem the
      * coupon. You can also delete coupons via the API.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Coupon
+     * @return \Epayco\Coupon
      */
     public function delete($id, $params = null, $opts = null)
     {
@@ -74,11 +74,11 @@ class CouponService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Coupon
+     * @return \Epayco\Coupon
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -91,11 +91,11 @@ class CouponService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Coupon
+     * @return \Epayco\Coupon
      */
     public function update($id, $params = null, $opts = null)
     {

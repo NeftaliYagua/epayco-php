@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe;
+namespace Epayco;
 
 /**
  * Class OAuthErrorObject.
@@ -8,7 +8,7 @@ namespace Stripe;
  * @property string $error
  * @property string $error_description
  */
-class OAuthErrorObject extends StripeObject
+class OAuthErrorObject extends EpaycoObject
 {
     /**
      * Refreshes this object using the provided values.

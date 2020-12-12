@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
 /**
  * Abstract base class for all services.
@@ -8,14 +8,14 @@ namespace Stripe\Service;
 abstract class AbstractService
 {
     /**
-     * @var \Stripe\StripeClientInterface
+     * @var \Epayco\EpaycoClientInterface
      */
     protected $client;
 
     /**
      * Initializes a new instance of the {@link AbstractService} class.
      *
-     * @param \Stripe\StripeClientInterface $client
+     * @param \Epayco\EpaycoClientInterface $client
      */
     public function __construct($client)
     {
@@ -25,7 +25,7 @@ abstract class AbstractService
     /**
      * Gets the client used by this service to send requests.
      *
-     * @return \Stripe\StripeClientInterface
+     * @return \Epayco\EpaycoClientInterface
      */
     public function getClient()
     {
@@ -70,7 +70,7 @@ abstract class AbstractService
             if (null === $id || '' === \trim($id)) {
                 $msg = 'The resource ID cannot be null or whitespace.';
 
-                throw new \Stripe\Exception\InvalidArgumentException($msg);
+                throw new \Epayco\Exception\InvalidArgumentException($msg);
             }
         }
 

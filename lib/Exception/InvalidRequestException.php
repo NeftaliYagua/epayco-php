@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe\Exception;
+namespace Epayco\Exception;
 
 /**
  * InvalidRequestException is thrown when a request is initiated with invalid
@@ -8,7 +8,7 @@ namespace Stripe\Exception;
  */
 class InvalidRequestException extends ApiErrorException
 {
-    protected $stripeParam;
+    protected $epaycoParam;
 
     /**
      * Creates a new InvalidRequestException exception.
@@ -17,9 +17,9 @@ class InvalidRequestException extends ApiErrorException
      * @param null|int $httpStatus the HTTP status code
      * @param null|string $httpBody the HTTP body as a string
      * @param null|array $jsonBody the JSON deserialized body
-     * @param null|array|\Stripe\Util\CaseInsensitiveArray $httpHeaders the HTTP headers array
-     * @param null|string $stripeCode the Stripe error code
-     * @param null|string $stripeParam the parameter related to the error
+     * @param null|array|\Epayco\Util\CaseInsensitiveArray $httpHeaders the HTTP headers array
+     * @param null|string $epaycoCode the Epayco error code
+     * @param null|string $epaycoParam the parameter related to the error
      *
      * @return InvalidRequestException
      */
@@ -29,11 +29,11 @@ class InvalidRequestException extends ApiErrorException
         $httpBody = null,
         $jsonBody = null,
         $httpHeaders = null,
-        $stripeCode = null,
-        $stripeParam = null
+        $epaycoCode = null,
+        $epaycoParam = null
     ) {
-        $instance = parent::factory($message, $httpStatus, $httpBody, $jsonBody, $httpHeaders, $stripeCode);
-        $instance->setStripeParam($stripeParam);
+        $instance = parent::factory($message, $httpStatus, $httpBody, $jsonBody, $httpHeaders, $epaycoCode);
+        $instance->setEpaycoParam($epaycoParam);
 
         return $instance;
     }
@@ -43,18 +43,18 @@ class InvalidRequestException extends ApiErrorException
      *
      * @return null|string
      */
-    public function getStripeParam()
+    public function getEpaycoParam()
     {
-        return $this->stripeParam;
+        return $this->epaycoParam;
     }
 
     /**
      * Sets the parameter related to the error.
      *
-     * @param null|string $stripeParam
+     * @param null|string $epaycoParam
      */
-    public function setStripeParam($stripeParam)
+    public function setEpaycoParam($epaycoParam)
     {
-        $this->stripeParam = $stripeParam;
+        $this->epaycoParam = $epaycoParam;
     }
 }

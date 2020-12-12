@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class SubscriptionService extends \Stripe\Service\AbstractService
+class SubscriptionService extends \Epayco\Service\AbstractService
 {
     /**
      * By default, returns a list of subscriptions that have not been canceled. In
      * order to list canceled subscriptions, specify <code>status=canceled</code>.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -33,7 +33,7 @@ class SubscriptionService extends \Stripe\Service\AbstractService
      * collected at the end of the period. But if the subscription is set to cancel
      * immediately, pending prorations will be removed.
      *
-     * By default, upon subscription cancellation, Stripe will stop automatic
+     * By default, upon subscription cancellation, Epayco will stop automatic
      * collection of all finalized invoices for the customer. This is intended to
      * prevent unexpected payment attempts after the customer has canceled a
      * subscription. However, you can resume automatic collection of the invoices
@@ -43,11 +43,11 @@ class SubscriptionService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Subscription
+     * @return \Epayco\Subscription
      */
     public function cancel($id, $params = null, $opts = null)
     {
@@ -59,11 +59,11 @@ class SubscriptionService extends \Stripe\Service\AbstractService
      * 500 active or scheduled subscriptions.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Subscription
+     * @return \Epayco\Subscription
      */
     public function create($params = null, $opts = null)
     {
@@ -75,11 +75,11 @@ class SubscriptionService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Subscription
+     * @return \Epayco\Subscription
      */
     public function deleteDiscount($id, $params = null, $opts = null)
     {
@@ -91,11 +91,11 @@ class SubscriptionService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Subscription
+     * @return \Epayco\Subscription
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -111,11 +111,11 @@ class SubscriptionService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Subscription
+     * @return \Epayco\Subscription
      */
     public function update($id, $params = null, $opts = null)
     {

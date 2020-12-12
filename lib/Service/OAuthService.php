@@ -1,18 +1,18 @@
 <?php
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class OAuthService extends \Stripe\Service\AbstractService
+class OAuthService extends \Epayco\Service\AbstractService
 {
     /**
-     * Sends a request to Stripe's Connect API.
+     * Sends a request to Epayco's Connect API.
      *
      * @param string $method the HTTP method
      * @param string $path the path of the request
      * @param array $params the parameters of the request
-     * @param array|\Stripe\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\Epayco\Util\RequestOptions $opts the special modifiers of the request
      *
-     * @return \Stripe\StripeObject the object returned by Stripe's Connect API
+     * @return \Epayco\EpaycoObject the object returned by Epayco's Connect API
      */
     protected function requestConnect($method, $path, $params, $opts)
     {
@@ -23,12 +23,12 @@ class OAuthService extends \Stripe\Service\AbstractService
     }
 
     /**
-     * Generates a URL to Stripe's OAuth form.
+     * Generates a URL to Epayco's OAuth form.
      *
      * @param null|array $params
      * @param null|array $opts
      *
-     * @return string the URL to Stripe's OAuth form
+     * @return string the URL to Epayco's OAuth form
      */
     public function authorizeUrl($params = null, $opts = null)
     {
@@ -41,7 +41,7 @@ class OAuthService extends \Stripe\Service\AbstractService
         if (!\array_key_exists('response_type', $params)) {
             $params['response_type'] = 'code';
         }
-        $query = \Stripe\Util\Util::encodeParameters($params);
+        $query = \Epayco\Util\Util::encodeParameters($params);
 
         return $base . '/oauth/authorize?' . $query;
     }
@@ -53,9 +53,9 @@ class OAuthService extends \Stripe\Service\AbstractService
      * @param null|array $params
      * @param null|array $opts
      *
-     * @throws \Stripe\Exception\OAuth\OAuthErrorException if the request fails
+     * @throws \Epayco\Exception\OAuth\OAuthErrorException if the request fails
      *
-     * @return \Stripe\StripeObject object containing the response from the API
+     * @return \Epayco\EpaycoObject object containing the response from the API
      */
     public function token($params = null, $opts = null)
     {
@@ -71,9 +71,9 @@ class OAuthService extends \Stripe\Service\AbstractService
      * @param null|array $params
      * @param null|array $opts
      *
-     * @throws \Stripe\Exception\OAuth\OAuthErrorException if the request fails
+     * @throws \Epayco\Exception\OAuth\OAuthErrorException if the request fails
      *
-     * @return \Stripe\StripeObject object containing the response from the API
+     * @return \Epayco\EpaycoObject object containing the response from the API
      */
     public function deauthorize($params = null, $opts = null)
     {
@@ -92,15 +92,15 @@ class OAuthService extends \Stripe\Service\AbstractService
         }
         if (null === $clientId) {
             $msg = 'No client_id provided. (HINT: set your client_id using '
-              . '`new \Stripe\StripeClient([clientId => <CLIENT-ID>
+              . '`new \Epayco\EpaycoClient([clientId => <CLIENT-ID>
                 ])`)".  You can find your client_ids '
-              . 'in your Stripe dashboard at '
+              . 'in your Epayco dashboard at '
               . 'https://dashboard.stripe.com/account/applications/settings, '
               . 'after registering your account as a platform. See '
               . 'https://stripe.com/docs/connect/standard-accounts for details, '
               . 'or email support@stripe.com if you have any questions.';
 
-            throw new \Stripe\Exception\AuthenticationException($msg);
+            throw new \Epayco\Exception\AuthenticationException($msg);
         }
 
         return $clientId;
@@ -116,28 +116,28 @@ class OAuthService extends \Stripe\Service\AbstractService
     }
 
     /**
-     * @param array|\Stripe\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\Epayco\Util\RequestOptions $opts the special modifiers of the request
      *
-     * @throws \Stripe\Exception\InvalidArgumentException
+     * @throws \Epayco\Exception\InvalidArgumentException
      *
-     * @return \Stripe\Util\RequestOptions
+     * @return \Epayco\Util\RequestOptions
      */
     private function _parseOpts($opts)
     {
         if (\is_array($opts)) {
             if (\array_key_exists('connect_base', $opts)) {
                 // Throw an exception for the convenience of anybody migrating to
-                // \Stripe\Service\OAuthService from \Stripe\OAuth, where `connect_base`
+                // \Epayco\Service\OAuthService from \Epayco\OAuth, where `connect_base`
                 // was the name of the parameter that behaves as `api_base` does here.
-                throw new \Stripe\Exception\InvalidArgumentException('Use `api_base`, not `connect_base`');
+                throw new \Epayco\Exception\InvalidArgumentException('Use `api_base`, not `connect_base`');
             }
         }
 
-        return \Stripe\Util\RequestOptions::parse($opts);
+        return \Epayco\Util\RequestOptions::parse($opts);
     }
 
     /**
-     * @param \Stripe\Util\RequestOptions $opts
+     * @param \Epayco\Util\RequestOptions $opts
      *
      * @return string
      */

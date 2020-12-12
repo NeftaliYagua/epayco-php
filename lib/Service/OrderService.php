@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class OrderService extends \Stripe\Service\AbstractService
+class OrderService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of your orders. The orders are returned sorted by creation date,
      * with the most recently created orders appearing first.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -26,11 +26,11 @@ class OrderService extends \Stripe\Service\AbstractService
      * Creates a new order object.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Order
+     * @return \Epayco\Order
      */
     public function create($params = null, $opts = null)
     {
@@ -42,11 +42,11 @@ class OrderService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Order
+     * @return \Epayco\Order
      */
     public function pay($id, $params = null, $opts = null)
     {
@@ -55,16 +55,16 @@ class OrderService extends \Stripe\Service\AbstractService
 
     /**
      * Retrieves the details of an existing order. Supply the unique order ID from
-     * either an order creation request or the order list, and Stripe will return the
+     * either an order creation request or the order list, and Epayco will return the
      * corresponding order information.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Order
+     * @return \Epayco\Order
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -79,11 +79,11 @@ class OrderService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Order
+     * @return \Epayco\Order
      */
     public function returnOrder($id, $params = null, $opts = null)
     {
@@ -96,11 +96,11 @@ class OrderService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Order
+     * @return \Epayco\Order
      */
     public function update($id, $params = null, $opts = null)
     {

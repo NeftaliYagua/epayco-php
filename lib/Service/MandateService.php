@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class MandateService extends \Stripe\Service\AbstractService
+class MandateService extends \Epayco\Service\AbstractService
 {
     /**
      * Retrieves a Mandate object.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Mandate
+     * @return \Epayco\Mandate
      */
     public function retrieve($id, $params = null, $opts = null)
     {

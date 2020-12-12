@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class ExchangeRateService extends \Stripe\Service\AbstractService
+class ExchangeRateService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of objects that contain the rates at which foreign currencies are
-     * converted to one another. Only shows the currencies for which Stripe supports.
+     * converted to one another. Only shows the currencies for which Epayco supports.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -28,11 +28,11 @@ class ExchangeRateService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\ExchangeRate
+     * @return \Epayco\ExchangeRate
      */
     public function retrieve($id, $params = null, $opts = null)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe\HttpClient;
+namespace Epayco\HttpClient;
 
 interface ClientInterface
 {
@@ -12,8 +12,8 @@ interface ClientInterface
      * @param bool $hasFile Whether or not $params references a file (via an @ prefix or
      *                         CURLFile)
      *
-     * @throws \Stripe\Exception\ApiConnectionException
-     * @throws \Stripe\Exception\UnexpectedValueException
+     * @throws \Epayco\Exception\ApiConnectionException
+     * @throws \Epayco\Exception\UnexpectedValueException
      *
      * @return array an array whose first element is raw request body, second
      *    element is HTTP status code and third array of HTTP headers

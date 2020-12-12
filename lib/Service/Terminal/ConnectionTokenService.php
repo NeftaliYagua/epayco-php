@@ -2,21 +2,21 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\Terminal;
+namespace Epayco\Service\Terminal;
 
-class ConnectionTokenService extends \Stripe\Service\AbstractService
+class ConnectionTokenService extends \Epayco\Service\AbstractService
 {
     /**
-     * To connect to a reader the Stripe Terminal SDK needs to retrieve a short-lived
-     * connection token from Stripe, proxied through your server. On your backend, add
+     * To connect to a reader the Epayco Terminal SDK needs to retrieve a short-lived
+     * connection token from Epayco, proxied through your server. On your backend, add
      * an endpoint that creates and returns a connection token.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Terminal\ConnectionToken
+     * @return \Epayco\Terminal\ConnectionToken
      */
     public function create($params = null, $opts = null)
     {

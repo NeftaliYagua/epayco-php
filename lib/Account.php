@@ -2,37 +2,37 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Epayco;
 
 /**
- * This is an object representing a Stripe account. You can retrieve it to see
+ * This is an object representing a Epayco account. You can retrieve it to see
  * properties on the account like its current e-mail address or if the account is
  * enabled yet to make live charges.
  *
  * Some properties, marked below, are available only to platforms that want to <a
- * href="https://stripe.com/docs/connect/accounts">create and manage Express or
+ * href="https://epayco.com/docs/connect/accounts">create and manage Express or
  * Custom accounts</a>.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property null|\Stripe\StripeObject $business_profile Business information about the account.
+ * @property null|\Epayco\EpaycoObject $business_profile Business information about the account.
  * @property null|string $business_type The business type.
- * @property \Stripe\StripeObject $capabilities
+ * @property \Epayco\EpaycoObject $capabilities
  * @property bool $charges_enabled Whether the account can create live charges.
- * @property \Stripe\StripeObject $company
+ * @property \Epayco\EpaycoObject $company
  * @property string $country The account's country.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property string $default_currency Three-letter ISO currency code representing the default currency for the account. This must be a currency that <a href="https://stripe.com/docs/payouts">Stripe supports in the account's country</a>.
+ * @property string $default_currency Three-letter ISO currency code representing the default currency for the account. This must be a currency that <a href="https://epayco.com/docs/payouts">Epayco supports in the account's country</a>.
  * @property bool $details_submitted Whether account details have been submitted. Standard accounts cannot receive payouts before this is true.
  * @property null|string $email The primary user's email address.
- * @property \Stripe\Collection $external_accounts External accounts (bank accounts and debit cards) currently attached to this account
- * @property \Stripe\Person $individual <p>This is an object representing a person associated with a Stripe account.</p><p>Related guide: <a href="https://stripe.com/docs/connect/identity-verification-api#person-information">Handling Identity Verification with the API</a>.</p>
- * @property \Stripe\StripeObject $metadata Set of <a href="https://stripe.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
- * @property bool $payouts_enabled Whether Stripe can send payouts to this account.
- * @property \Stripe\StripeObject $requirements
- * @property null|\Stripe\StripeObject $settings Options for customizing how the account functions within Stripe.
- * @property \Stripe\StripeObject $tos_acceptance
- * @property string $type The Stripe account type. Can be <code>standard</code>, <code>express</code>, or <code>custom</code>.
+ * @property \Epayco\Collection $external_accounts External accounts (bank accounts and debit cards) currently attached to this account
+ * @property \Epayco\Person $individual <p>This is an object representing a person associated with a Epayco account.</p><p>Related guide: <a href="https://epayco.com/docs/connect/identity-verification-api#person-information">Handling Identity Verification with the API</a>.</p>
+ * @property \Epayco\EpaycoObject $metadata Set of <a href="https://epayco.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property bool $payouts_enabled Whether Epayco can send payouts to this account.
+ * @property \Epayco\EpaycoObject $requirements
+ * @property null|\Epayco\EpaycoObject $settings Options for customizing how the account functions within Epayco.
+ * @property \Epayco\EpaycoObject $tos_acceptance
+ * @property string $type The Epayco account type. Can be <code>standard</code>, <code>express</code>, or <code>custom</code>.
  */
 class Account extends ApiResource
 {
@@ -125,7 +125,7 @@ class Account extends ApiResource
 
         $updateArr = [];
         foreach ($additionalOwners as $i => $v) {
-            $update = ($v instanceof StripeObject) ? $v->serializeParameters() : $v;
+            $update = ($v instanceof EpaycoObject) ? $v->serializeParameters() : $v;
 
             if ([] !== $update) {
                 if (!$originalValue
@@ -144,9 +144,9 @@ class Account extends ApiResource
      *     options array containing an `id` key
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Account
+     * @return \Epayco\Account
      */
     public static function retrieve($id = null, $opts = null)
     {
@@ -162,15 +162,15 @@ class Account extends ApiResource
      * @param null|array $clientId
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\StripeObject object containing the response from the API
+     * @return \Epayco\EpaycoObject object containing the response from the API
      */
     public function deauthorize($clientId = null, $opts = null)
     {
         $params = [
             'client_id' => $clientId,
-            'stripe_user_id' => $this->id,
+            'epayco_user_id' => $this->id,
         ];
 
         return OAuth::deauthorize($params, $opts);
@@ -180,15 +180,15 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection the list of persons
+     * @return \Epayco\Collection the list of persons
      */
     public function persons($params = null, $opts = null)
     {
         $url = $this->instanceUrl() . '/persons';
         list($response, $opts) = $this->_request('get', $url, $params, $opts);
-        $obj = Util\Util::convertToStripeObject($response, $opts);
+        $obj = Util\Util::convertToEpaycoObject($response, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -198,7 +198,7 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
      * @return Account the rejected account
      */
@@ -224,9 +224,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection the list of capabilities
+     * @return \Epayco\Collection the list of capabilities
      */
     public static function allCapabilities($id, $params = null, $opts = null)
     {
@@ -239,9 +239,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Capability
+     * @return \Epayco\Capability
      */
     public static function retrieveCapability($id, $capabilityId, $params = null, $opts = null)
     {
@@ -254,9 +254,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Capability
+     * @return \Epayco\Capability
      */
     public static function updateCapability($id, $capabilityId, $params = null, $opts = null)
     {
@@ -270,9 +270,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection the list of external accounts (BankAccount or Card)
+     * @return \Epayco\Collection the list of external accounts (BankAccount or Card)
      */
     public static function allExternalAccounts($id, $params = null, $opts = null)
     {
@@ -284,9 +284,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\BankAccount|\Stripe\Card
+     * @return \Epayco\BankAccount|\Epayco\Card
      */
     public static function createExternalAccount($id, $params = null, $opts = null)
     {
@@ -299,9 +299,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\BankAccount|\Stripe\Card
+     * @return \Epayco\BankAccount|\Epayco\Card
      */
     public static function deleteExternalAccount($id, $externalAccountId, $params = null, $opts = null)
     {
@@ -314,9 +314,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\BankAccount|\Stripe\Card
+     * @return \Epayco\BankAccount|\Epayco\Card
      */
     public static function retrieveExternalAccount($id, $externalAccountId, $params = null, $opts = null)
     {
@@ -329,9 +329,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\BankAccount|\Stripe\Card
+     * @return \Epayco\BankAccount|\Epayco\Card
      */
     public static function updateExternalAccount($id, $externalAccountId, $params = null, $opts = null)
     {
@@ -345,9 +345,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\LoginLink
+     * @return \Epayco\LoginLink
      */
     public static function createLoginLink($id, $params = null, $opts = null)
     {
@@ -361,9 +361,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection the list of persons
+     * @return \Epayco\Collection the list of persons
      */
     public static function allPersons($id, $params = null, $opts = null)
     {
@@ -375,9 +375,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Person
+     * @return \Epayco\Person
      */
     public static function createPerson($id, $params = null, $opts = null)
     {
@@ -390,9 +390,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Person
+     * @return \Epayco\Person
      */
     public static function deletePerson($id, $personId, $params = null, $opts = null)
     {
@@ -405,9 +405,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Person
+     * @return \Epayco\Person
      */
     public static function retrievePerson($id, $personId, $params = null, $opts = null)
     {
@@ -420,9 +420,9 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Person
+     * @return \Epayco\Person
      */
     public static function updatePerson($id, $personId, $params = null, $opts = null)
     {

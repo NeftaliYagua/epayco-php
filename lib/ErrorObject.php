@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe;
+namespace Epayco;
 
 /**
  * Class ErrorObject.
@@ -28,19 +28,19 @@ namespace Stripe;
  *    field is only populated for invoice-related errors.
  * @property SetupIntent $setup_intent The SetupIntent object for errors
  *    returned on a request involving a SetupIntent.
- * @property StripeObject $source The source object for errors returned on a
+ * @property EpaycoObject $source The source object for errors returned on a
  *    request involving a source.
  * @property string $type The type of error returned. One of
  *    `api_connection_error`, `api_error`, `authentication_error`,
  *    `card_error`, `idempotency_error`, `invalid_request_error`, or
  *    `rate_limit_error`.
  */
-class ErrorObject extends StripeObject
+class ErrorObject extends EpaycoObject
 {
     /**
      * Possible string representations of an error's code.
      *
-     * @see https://stripe.com/docs/error-codes
+     * @see https://epayco.com/docs/error-codes
      */
     const CODE_ACCOUNT_ALREADY_EXISTS = 'account_already_exists';
     const CODE_ACCOUNT_COUNTRY_INVALID_ADDRESS = 'account_country_invalid_address';

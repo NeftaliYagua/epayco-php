@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Epayco\Service;
 
-class ChargeService extends \Stripe\Service\AbstractService
+class ChargeService extends \Epayco\Service\AbstractService
 {
     /**
      * Returns a list of charges you’ve previously created. The charges are returned in
      * sorted order, with the most recent charges appearing first.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Collection
+     * @return \Epayco\Collection
      */
     public function all($params = null, $opts = null)
     {
@@ -33,11 +33,11 @@ class ChargeService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Charge
+     * @return \Epayco\Charge
      */
     public function capture($id, $params = null, $opts = null)
     {
@@ -48,15 +48,15 @@ class ChargeService extends \Stripe\Service\AbstractService
      * To charge a credit card or other payment source, you create a
      * <code>Charge</code> object. If your API key is in test mode, the supplied
      * payment source (e.g., card) won’t actually be charged, although everything else
-     * will occur as if in live mode. (Stripe assumes that the charge would have
+     * will occur as if in live mode. (Epayco assumes that the charge would have
      * completed successfully).
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Charge
+     * @return \Epayco\Charge
      */
     public function create($params = null, $opts = null)
     {
@@ -65,17 +65,17 @@ class ChargeService extends \Stripe\Service\AbstractService
 
     /**
      * Retrieves the details of a charge that has previously been created. Supply the
-     * unique charge ID that was returned from your previous request, and Stripe will
+     * unique charge ID that was returned from your previous request, and Epayco will
      * return the corresponding charge information. The same information is returned
      * when creating or refunding the charge.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Charge
+     * @return \Epayco\Charge
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -88,11 +88,11 @@ class ChargeService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Epayco\Util\RequestOptions $opts
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Epayco\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\Charge
+     * @return \Epayco\Charge
      */
     public function update($id, $params = null, $opts = null)
     {
